@@ -6,12 +6,12 @@
     <title>Propuesta · Ecosistema Digital Mariana Echeverri</title>
     <meta
       name="description"
-      content="Propuesta privada en tres actos: Primer Loto, asistente con IA, la app Loto, el panel Raíz y 14 automatizaciones para Mariana Echeverri · Wellness & Nutrition."
+      content="Propuesta privada en tres actos para Mariana Echeverri · Nutrición & Longevidad: web, Primer Loto, asistente con IA, app de clientas, panel Raíz y automatizaciones."
     />
     <meta name="robots" content="noindex, nofollow" />
-    <meta name="theme-color" content="#1B2720" />
+    <meta name="theme-color" content="#FAF0E6" />
     <meta property="og:title" content="Mariana, esto se vive antes de leerse." />
-    <meta property="og:description" content="Propuesta del Ecosistema Digital Mariana Echeverri · Wellness & Nutrition." />
+    <meta property="og:description" content="Propuesta del Ecosistema Digital Mariana Echeverri · Nutrición & Longevidad." />
     <meta property="og:type" content="website" />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" href="icons/icon-192.png" type="image/png" />
@@ -19,27 +19,27 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Mariana" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Pinyon+Script&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body class="is-locked">
-    <!-- Definiciones SVG: degradados dorados, loto e íconos lineales -->
+    <!-- Definiciones SVG: dorado sutil, loto e íconos lineales -->
     <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
       <defs>
         <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#EBD6AE" />
-          <stop offset="0.5" stop-color="#C9A96E" />
-          <stop offset="1" stop-color="#9C7C4C" />
+          <stop offset="0" stop-color="#E6D3AB" />
+          <stop offset="0.5" stop-color="#C9A96A" />
+          <stop offset="1" stop-color="#A8864F" />
         </linearGradient>
         <linearGradient id="goldFill" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#EBD6AE" />
-          <stop offset="1" stop-color="#C9A96E" />
+          <stop offset="0" stop-color="#EDD2CC" />
+          <stop offset="1" stop-color="#DAB8B1" />
         </linearGradient>
       </defs>
       <symbol id="lotus" viewBox="0 0 120 100">
@@ -116,6 +116,14 @@
         <path d="M18.09 10.37A6 6 0 1 1 10.34 18" />
         <path d="M7 6h1v4" />
       </symbol>
+      <symbol id="i-card" viewBox="0 0 24 24">
+        <rect x="2" y="5" width="20" height="14" rx="2" />
+        <path d="M2 10h20" />
+      </symbol>
+      <symbol id="i-award" viewBox="0 0 24 24">
+        <circle cx="12" cy="8" r="6" />
+        <path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5" />
+      </symbol>
       <symbol id="i-share" viewBox="0 0 24 24">
         <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
         <path d="m16 6-4-4-4 4M12 2v13" />
@@ -136,10 +144,6 @@
       <symbol id="i-layers" viewBox="0 0 24 24">
         <path d="m12 2 10 5-10 5L2 7z" />
         <path d="m2 17 10 5 10-5M2 12l10 5 10-5" />
-      </symbol>
-      <symbol id="i-chart" viewBox="0 0 24 24">
-        <path d="M3 3v18h18" />
-        <path d="M18 17V9M13 17V5M8 17v-3" />
       </symbol>
       <symbol id="i-heart" viewBox="0 0 24 24">
         <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7z" />
@@ -166,7 +170,7 @@
     </svg>
 
     <!-- ================= PORTAL ================= -->
-    <div class="portal dark" id="portal" role="dialog" aria-modal="true" aria-labelledby="portal-title">
+    <div class="portal" id="portal" role="dialog" aria-modal="true" aria-labelledby="portal-title">
       <div class="portal-inner">
         <svg class="portal-lotus" viewBox="0 0 120 100" aria-hidden="true">
           <g fill="none" stroke="url(#gold)" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round">
@@ -180,9 +184,9 @@
           </g>
         </svg>
         <span class="kicker">Una propuesta que se vive</span>
-        <h1 id="portal-title">Mariana, antes de leer una propuesta, <em>vive lo que vivirán tus clientes.</em></h1>
+        <h1 id="portal-title">Mariana, antes de leer una propuesta, <em>vive lo que vivirán tus clientas.</em></h1>
         <p>
-          Son tres actos. Primero la recorres como alguien que acaba de descubrirte, después la ves desde tu lado y al
+          Son tres actos. Primero la recorres como una mujer que acaba de descubrirte, después la ves desde tu lado y al
           final decides cómo hacerla realidad.
         </p>
         <div class="portal-actions">
@@ -199,8 +203,8 @@
     <header class="site-header">
       <div class="container">
         <div class="header-pill">
-          <a href="#inicio" class="brand" aria-label="Mariana Echeverri · Wellness and Nutrition">
-            <img src="assets/img/logo.png" alt="Mariana Echeverri · Wellness and Nutrition" width="400" height="168" />
+          <a href="#inicio" class="brand" aria-label="Mariana Echeverri · Nutrición y Longevidad">
+            <img src="assets/img/logo.png" alt="Mariana Echeverri · Nutrición y Longevidad" width="800" height="340" />
           </a>
           <nav class="nav" aria-label="Actos de la propuesta">
             <a href="#acto-1"><span class="roman">I</span> Vívelo</a>
@@ -221,15 +225,16 @@
 
     <main>
       <!-- ================= HERO ================= -->
-      <section class="hero dark" id="inicio">
+      <section class="hero" id="inicio">
         <div class="container">
           <div class="hero-grid">
             <div>
-              <span class="kicker" data-reveal>Propuesta · Ecosistema digital</span>
-              <h1 data-reveal style="--d: 0.1s">Que cada persona que te descubre <em>encuentre el camino hasta ti.</em></h1>
+              <span class="kicker" data-reveal>Propuesta · Nutrición &amp; Longevidad</span>
+              <h1 data-reveal style="--d: 0.1s">Cuando terminan LONÉVA, <em>empieza lo tuyo.</em></h1>
               <p class="lead" data-reveal style="--d: 0.2s">
-                Una web que recibe como recibes tú, un asistente con IA que responde cuando tú no puedes, una app donde tus
-                clientes avanzan y un panel donde ves todo. Pero no te lo vamos a contar: lo vas a vivir.
+                Déjà Vu crea el resultado y la confianza. Tu ecosistema guarda la relación a largo plazo: una web que recibe
+                como tú, una IA que responde por ti 24/7, una app donde tus clientas viven tu membresía y tus programas, y un
+                panel donde ves leads, clientas, pagos, agenda y progreso. Todo 100% tuyo.
               </p>
               <div class="hero-actions" data-reveal style="--d: 0.3s">
                 <a class="btn btn-gold" href="#acto-1">Empezar por el Acto I <span class="arrow" aria-hidden="true">→</span></a>
@@ -239,7 +244,7 @@
                 <span><strong>$2,500</strong> inversión única</span>
                 <span><strong>$150</strong> al mes</span>
                 <span><strong>4 horas</strong> de entrega</span>
-                <span><strong>IA real</strong>, no un demo</span>
+                <span><strong>100% tuyo</strong>: código, datos y clientas</span>
               </div>
             </div>
             <div class="mandala" data-reveal style="--d: 0.2s" aria-hidden="true">
@@ -248,7 +253,7 @@
               <div class="ring r3"><i></i></div>
               <div class="core"><svg viewBox="0 0 120 100"><use href="#lotus" /></svg></div>
               <div class="tag t1"><strong>Atraer</strong><small>Tu web y tu IA</small></div>
-              <div class="tag t2"><strong>Florecer</strong><small>Loto, su app</small></div>
+              <div class="tag t2"><strong>Florecer</strong><small>Tu app y tu membresía</small></div>
               <div class="tag t3"><strong>Sostener</strong><small>Raíz, tu panel</small></div>
             </div>
           </div>
@@ -256,19 +261,58 @@
           <div class="acts-index" data-reveal>
             <a href="#acto-1">
               <span class="num">I</span>
-              <span><strong>Vívelo como tu clienta</strong><small>Primer Loto, tu asistente y la app</small></span>
+              <span><strong>Vívelo como tu clienta</strong><small>Primer Loto, tu asistente y tu app</small></span>
               <svg class="i go" width="18" height="18"><use href="#i-arrow" /></svg>
             </a>
             <a href="#acto-2">
               <span class="num">II</span>
-              <span><strong>Míralo desde tu lado</strong><small>Tú, como contacto nuevo en Raíz</small></span>
+              <span><strong>Míralo desde tu lado</strong><small>Tú, como lead nuevo en Raíz</small></span>
               <svg class="i go" width="18" height="18"><use href="#i-arrow" /></svg>
             </a>
             <a href="#acto-3">
               <span class="num">III</span>
-              <span><strong>Hazlo realidad</strong><small>Tus números, la inversión y las garantías</small></span>
+              <span><strong>Hazlo realidad</strong><small>Tu membresía en números, inversión y garantías</small></span>
               <svg class="i go" width="18" height="18"><use href="#i-arrow" /></svg>
             </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= LO QUE ESCUCHAMOS ================= -->
+      <section class="section paper" id="escuchamos">
+        <div class="container heard">
+          <div>
+            <span class="kicker" data-reveal>Lo que escuchamos</span>
+            <h2 data-reveal style="--d: 0.1s; margin: 22px 0 22px">Tu negocio tiene <em>una lógica clara.</em></h2>
+            <p class="lead" data-reveal style="--d: 0.2s">
+              Enfermera de profesión, coach de psicología de la nutrición y personal trainer, en Orlando. Tu clienta: una mujer
+              de 35 a 40 años, con rutina estructurada, que no sabe qué comer ni en qué porciones y está cansada de las dietas
+              extremas. Construimos todo alrededor de ella y de tu forma de acompañarla.
+            </p>
+            <div class="her-words" data-reveal style="--d: 0.3s">
+              <blockquote><p>“La longevidad empieza en la mente.”</p><small>Tu lema · titular de tu web</small></blockquote>
+              <blockquote><p>“No hay nada más espiritual que cuidar tu cuerpo.”</p><small>Tu frase insignia</small></blockquote>
+            </div>
+          </div>
+          <div data-reveal style="--d: 0.15s">
+            <div class="model">
+              <div class="model-step"><span class="ic">1</span><div><strong>Te conocen en Déjà Vu</strong><span>Tus consultas impulsan las membresías del gimnasio.</span></div></div>
+              <div class="model-arrow" aria-hidden="true">↓</div>
+              <div class="model-step"><span class="ic">2</span><div><strong>Entran a LONÉVA</strong><span>8 semanas, $299, en la plataforma del gimnasio. Crea el resultado y la confianza.</span></div></div>
+              <div class="model-arrow" aria-hidden="true">↓</div>
+              <div class="model-step own"><span class="ic">3</span><div><strong>Llegan a tu app</strong><span>Tu membresía de continuidad y todos tus programas. Aquí empieza lo tuyo.</span></div></div>
+              <div class="model-arrow" aria-hidden="true">↓</div>
+              <div class="model-step"><span class="ic">∞</span><div><strong>Una relación a largo plazo</strong><span>Contenido nuevo cada mes, retos, comunidad y tu acompañamiento.</span></div></div>
+            </div>
+            <div class="model-side">
+              <span>Y en paralelo, tu web también vende</span>
+              <div class="chips">
+                <span>Consultas 1:1 por Calendly</span>
+                <span>Planes nutricionales personalizados</span>
+                <span>Guía anti-dieta extrema</span>
+                <span class="navy">PEPS · Portal Health</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -280,7 +324,7 @@
           <span class="kicker" data-reveal>Acto I · Como tu clienta</span>
           <h2 data-reveal style="--d: 0.1s">Acabas de ver un reel de Mariana. <em>Tocas el link de su bio.</em></h2>
           <p class="lead" data-reveal style="--d: 0.2s">
-            Desde aquí eres una persona más que llega a tu marca. Vive los tres momentos que vivirá cada una de ellas.
+            Desde aquí eres una mujer más que llega a tu marca. Vive los tres momentos que vivirá cada una de ellas.
           </p>
         </div>
       </section>
@@ -300,8 +344,8 @@
             </a>
             <a class="scene" href="#escena-3" id="scene3" data-reveal style="--d: 0.2s">
               <span class="n">3</span>
-              <h4>Loto, su app</h4>
-              <p>Se instala en su celular y le habla por su nombre.</p>
+              <h4>Tu app</h4>
+              <p>Su programa, su check-in diario y sus insignias, con su nombre.</p>
             </a>
           </div>
 
@@ -311,22 +355,22 @@
               <span class="step-label" data-reveal><b>1</b> Primer Loto</span>
               <h3 data-reveal style="--d: 0.1s">La primera impresión <em>también nutre.</em></h3>
               <p class="lead" data-reveal style="--d: 0.2s">
-                Nada de formularios fríos. La pantalla empieza en beige y se aclara con cada respuesta hasta llegar al
-                blanco, con un sonido suave en cada paso. Con cada respuesta se abre un pétalo: al final, su primer loto.
+                Nada de formularios fríos. La pantalla empieza en beige y se aclara con cada respuesta hasta llegar al blanco,
+                con un sonido suave en cada paso. Con cada respuesta se abre un pétalo: al final, su primer loto.
               </p>
               <ul class="feature-list" data-reveal style="--d: 0.3s">
                 <li><span class="n">01</span>Una pregunta a la vez, sin sentirse interrogada</li>
                 <li><span class="n">02</span>Pantalla que evoluciona de beige a blanco</li>
                 <li><span class="n">03</span>Música ambiental y efectos de sonido opcionales</li>
-                <li><span class="n">04</span>Al terminar, tu asistente continúa la conversación</li>
-                <li><span class="n">05</span>Cada respuesta llega a Raíz con su origen e intención</li>
+                <li><span class="n">04</span>Al terminar: tu guía gratuita, tu IA o tu agenda</li>
+                <li><span class="n">05</span>Cada respuesta llega a Raíz como lead, con su origen e intención</li>
               </ul>
             </div>
             <div class="lotus-card" data-reveal style="--d: 0.2s">
               <svg viewBox="0 0 120 100" aria-hidden="true"><use href="#lotus" /></svg>
               <div class="spectrum" aria-hidden="true">
-                <i style="background: #e7dfd2"></i><i style="background: #ece5da"></i><i style="background: #f1ece4"></i
-                ><i style="background: #f6f3ee"></i><i style="background: #fbfaf7"></i><i style="background: #ffffff"></i>
+                <i style="background: #ead8c6"></i><i style="background: #f0e2d5"></i><i style="background: #f5ebe2"></i
+                ><i style="background: #f9f2ec"></i><i style="background: #fcf8f4"></i><i style="background: #ffffff"></i>
               </div>
               <div class="spectrum-labels"><span>Llega</span><span>Se siente en casa</span></div>
               <h3>Ábrelo tú <em>primero.</em></h3>
@@ -340,19 +384,19 @@
           <div class="chat-wrap" id="escena-2">
             <div>
               <span class="step-label" data-reveal><b>2</b> Tu asistente</span>
-              <h3 data-reveal style="--d: 0.1s">Responde al instante, <em>con tu voz.</em></h3>
+              <h3 data-reveal style="--d: 0.1s">Responde por ti, <em>con tu voz.</em></h3>
               <p class="lead" data-reveal style="--d: 0.2s">
-                Este asistente funciona con inteligencia artificial real y conoce tu historia, tu forma de acompañar y tus
-                límites. Pregúntale lo que te preguntan tus clientas, o intenta ponerlo en aprietos.
+                Funciona con inteligencia artificial real y conoce tu historia, LONÉVA, tu membresía, tus consultas y tu
+                alianza con Portal Health. Pregúntale lo que te preguntan tus clientas, o intenta ponerlo en aprietos.
               </p>
               <div class="proof-points" data-reveal style="--d: 0.3s">
                 <div class="proof">
                   <span class="ic"><svg class="i" width="18" height="18"><use href="#i-msg" /></svg></span>
-                  <div><strong>Contesta 24/7 en tu web y en WhatsApp</strong><span>La conversación sigue donde quedó, sin importar el canal.</span></div>
+                  <div><strong>Atiende 24/7 en tu web y en WhatsApp</strong><span>Dudas frecuentes y recordatorios, sin que estés pegada al teléfono.</span></div>
                 </div>
                 <div class="proof">
                   <span class="ic"><svg class="i" width="18" height="18"><use href="#i-shield" /></svg></span>
-                  <div><strong>Sabe qué no decir</strong><span>No diagnostica, no receta y te pasa los temas sensibles.</span></div>
+                  <div><strong>Sabe qué no decir</strong><span>No diagnostica ni da dosis: lo médico lo valora Portal Health o tu consulta.</span></div>
                 </div>
                 <div class="proof">
                   <span class="ic"><svg class="i" width="18" height="18"><use href="#i-user-check" /></svg></span>
@@ -371,11 +415,11 @@
               </div>
               <div class="chat-body" id="chatBody" aria-live="polite"></div>
               <div class="quick" id="chatQuick">
-                <button type="button">¿Cómo acompaña Mariana?</button>
-                <button type="button">Quiero agendar una consulta</button>
-                <button type="button">¿Qué es LONEVA?</button>
-                <button type="button">¿Cuánto cuesta?</button>
-                <button type="button">No sé por dónde empezar</button>
+                <button type="button">¿Qué es LONÉVA?</button>
+                <button type="button">Terminé LONÉVA, ¿qué sigue?</button>
+                <button type="button">Quiero una consulta 1:1</button>
+                <button type="button">¿Cómo funcionan los péptidos contigo?</button>
+                <button type="button">Quiero la guía gratuita</button>
               </div>
               <form class="chat-form" id="chatForm">
                 <label class="sr-only" for="chatInput">Tu mensaje</label>
@@ -389,7 +433,7 @@
           <!-- Escena 3 -->
           <div class="loto-wrap" id="escena-3">
             <div class="phone-stage" data-reveal>
-              <div class="phone" aria-label="Vista previa de la app Loto">
+              <div class="phone" aria-label="Vista previa de tu app">
                 <div class="phone-notch" aria-hidden="true"></div>
                 <div class="phone-screen">
                   <div class="ph-status"><span>9:41</span><span>●●● ▮</span></div>
@@ -399,34 +443,37 @@
                   </div>
                   <div class="ph-body">
                     <div class="ph-hi" id="lotoHi">Buenos días.</div>
-                    <div class="ph-date">Un día a tu ritmo</div>
+                    <div class="ph-date">Membresía · Semana 3</div>
                     <div class="ph-focus">
                       <small>Tu enfoque de hoy</small>
                       <strong id="lotoFocus">Constancia.</strong>
-                      <div class="bar"><i style="width: 25%"></i></div>
+                      <div class="bar"><i style="width: 40%"></i></div>
+                    </div>
+                    <div class="ph-metrics" aria-label="Check-in de hoy">
+                      <div><strong>7 h</strong>Sueño</div>
+                      <div><strong>6/8</strong>Agua</div>
+                      <div><strong>Bien</strong>Ánimo</div>
+                      <div><strong>40′</strong>Mov.</div>
                     </div>
                     <div class="ph-item done">
                       <span class="ck"><svg class="i" width="11" height="11"><use href="#i-check" /></svg></span>
-                      <div><small>Nutrición</small>Desayuno con proteína</div>
+                      <div><small>Nutrición</small>Proteína primero en el almuerzo</div>
                     </div>
                     <div class="ph-item">
                       <span class="ck"></span>
-                      <div><small>Movimiento</small>Entrena conmigo · 30 min</div>
+                      <div><small>Entrenamiento</small>Sesión fuerte · Plan B disponible</div>
                     </div>
                     <div class="ph-item">
                       <span class="ck"></span>
-                      <div><small>Hábito</small>Un vaso de agua a la vista</div>
+                      <div><small>Nuevo esta semana</small>Cápsula: estrés y antojos</div>
                     </div>
-                    <div class="ph-item">
-                      <span class="ck"></span>
-                      <div><small>Reflexión</small>Una pausa para escucharte</div>
-                    </div>
+                    <span class="ph-badge"><svg class="i" width="12" height="12"><use href="#i-award" /></svg>Insignia: 7 días sin azúcar</span>
                   </div>
                   <div class="ph-nav">
                     <span class="on"><svg class="i"><use href="#i-home" /></svg>Hoy</span>
-                    <span><svg class="i"><use href="#i-layers" /></svg>Programas</span>
-                    <span><svg class="i"><use href="#i-chart" /></svg>Tu semana</span>
+                    <span><svg class="i"><use href="#i-layers" /></svg>Programa</span>
                     <span><svg class="i"><use href="#i-heart" /></svg>Check-in</span>
+                    <span><svg class="i"><use href="#i-users" /></svg>Comunidad</span>
                   </div>
                 </div>
               </div>
@@ -437,21 +484,22 @@
                 </div>
                 <div class="notif">
                   <span class="ic"><svg viewBox="0 0 120 100"><use href="#lotus" /></svg></span>
-                  <div><strong>Loto <small>2 h</small></strong><p>Vas 4 de 7 días. Hoy solo faltan 2 acciones 🌿</p></div>
+                  <div><strong>Loto <small>lunes</small></strong><p>Se desbloqueó tu semana 3: estrés y antojos 🌿</p></div>
                 </div>
                 <div class="notif">
                   <span class="ic"><svg viewBox="0 0 120 100"><use href="#lotus" /></svg></span>
-                  <div><strong>Mariana Echeverri <small>ayer</small></strong><p>Te dejé un mensaje sobre tu semana. Ábrelo cuando puedas.</p></div>
+                  <div><strong>Mariana Echeverri <small>ayer</small></strong><p>¡Ganaste tu insignia de 7 días sin azúcar! Estoy orgullosa de ti.</p></div>
                 </div>
               </div>
             </div>
 
             <div>
-              <span class="step-label" data-reveal><b>3</b> Loto, su app</span>
-              <h3 data-reveal style="--d: 0.1s">Su app, <em>sin esperar a las tiendas.</em></h3>
+              <span class="step-label" data-reveal><b>3</b> Tu app</span>
+              <h3 data-reveal style="--d: 0.1s">Su portal, <em>en su celular.</em></h3>
               <p class="lead" data-reveal style="--d: 0.2s" id="lotoLead">
-                Loto se instala directo desde tu web: con tu ícono, a pantalla completa y con notificaciones según su
-                objetivo. Abre tu Primer Loto y mira cómo la app te saluda con lo que respondiste.
+                La llamamos Loto. Se instala desde tu web, con login: su programa, su plan de nutrición, sus rutinas, su check-in
+                diario de sueño, agua, ánimo y movimiento, sus insignias, la comunidad privada y el contenido que se desbloquea
+                cada semana.
               </p>
               <div class="install" data-reveal style="--d: 0.3s">
                 <div class="install-tabs" role="tablist" aria-label="Cómo instalar la app">
@@ -502,7 +550,8 @@
           <span class="kicker" data-reveal>Acto II · Desde tu lado</span>
           <h2 data-reveal style="--d: 0.1s">Ahora cambia de silla. <em>Esto es lo que tú ves.</em></h2>
           <p class="lead" data-reveal style="--d: 0.2s">
-            Todo lo que hiciste en el Acto I ya está en Raíz, tu panel. Sin escribirlo a mano y sin buscarlo en WhatsApp.
+            Todo lo que hiciste en el Acto I ya está en Raíz, tu panel: leads, clientas, pagos, agenda y progreso en un solo
+            lugar. Sin WhatsApp ni hojas sueltas.
           </p>
         </div>
       </section>
@@ -523,9 +572,11 @@
                 <div class="raiz-tabs" role="tablist" aria-label="Secciones de Raíz">
                   <button class="raiz-tab" role="tab" aria-selected="false" data-panel="p-hoy"><svg class="i"><use href="#i-home" /></svg>Hoy</button>
                   <button class="raiz-tab is-active" role="tab" aria-selected="true" data-panel="p-contactos">
-                    <svg class="i"><use href="#i-users" /></svg>Contactos<span class="count" id="newCount">3</span>
+                    <svg class="i"><use href="#i-spark" /></svg>Leads<span class="count" id="newCount">3</span>
                   </button>
+                  <button class="raiz-tab" role="tab" aria-selected="false" data-panel="p-clientas"><svg class="i"><use href="#i-users" /></svg>Clientas</button>
                   <button class="raiz-tab" role="tab" aria-selected="false" data-panel="p-convos"><svg class="i"><use href="#i-msg" /></svg>Conversaciones</button>
+                  <button class="raiz-tab" role="tab" aria-selected="false" data-panel="p-pagos"><svg class="i"><use href="#i-card" /></svg>Pagos</button>
                   <button class="raiz-tab" role="tab" aria-selected="false" data-panel="p-editor"><svg class="i"><use href="#i-edit" /></svg>Editor de página</button>
                   <button class="raiz-tab" role="tab" aria-selected="false" data-panel="p-senales"><svg class="i"><use href="#i-mega" /></svg>Señales</button>
                 </div>
@@ -539,39 +590,75 @@
                     <span class="chip-me" data-today>Hoy</span>
                   </div>
                   <div class="kpis">
-                    <div class="kpi hl"><strong id="kpiNew">3</strong><span>Contactos nuevos</span><small id="kpiNewNote">Desde Instagram y web</small></div>
-                    <div class="kpi"><strong>18</strong><span>Personas activas</span><small>Avanzando en Loto</small></div>
-                    <div class="kpi"><strong>6</strong><span>Conversaciones IA hoy</span><small>1 requiere tu mirada</small></div>
-                    <div class="kpi"><strong>3</strong><span>Consultas hoy</span><small>La primera a las 9:00</small></div>
+                    <div class="kpi hl"><strong id="kpiNew">3</strong><span>Leads nuevos</span><small id="kpiNewNote">Desde Instagram y tu guía</small></div>
+                    <div class="kpi"><strong>24</strong><span>Clientas activas</span><small>En tu membresía y programas</small></div>
+                    <div class="kpi"><strong>$1,840</strong><span>Pagos del mes</span><small>Stripe · datos de ejemplo</small></div>
+                    <div class="kpi"><strong>3</strong><span>Consultas hoy</span><small>Calendly · la primera a las 9:00</small></div>
                   </div>
                   <div class="two-col">
                     <div class="card-s">
                       <h5>Para avanzar hoy</h5>
                       <div class="task you" id="taskYou" hidden><span class="check"></span><div><span id="taskYouTitle">Responder</span><small id="taskYouNote"></small></div></div>
-                      <div class="task"><span class="check"></span><div>Preparar la consulta de Valeria<small>Hoy 14:30 · resumen listo por IA</small></div></div>
-                      <div class="task"><span class="check"></span><div>Aprobar la experiencia de Juliana<small>Quiere compartirla en la comunidad</small></div></div>
-                      <div class="task"><span class="check"></span><div>Revisar la señal del lunes<small>Reto de 7 días · 18 personas</small></div></div>
+                      <div class="task"><span class="check"></span><div>Invitar a la cohorte 4 de LONÉVA a tu app<small>12 graduadas esta semana · mensaje listo</small></div></div>
+                      <div class="task"><span class="check"></span><div>Preparar la consulta 1:1 de Valeria<small>Hoy 14:30 · resumen listo por IA</small></div></div>
+                      <div class="task"><span class="check"></span><div>Revisar 3 derivaciones a Portal Health<small>Desde tu sección PEPS</small></div></div>
                     </div>
                     <div class="card-s">
-                      <h5>Personas para revisar</h5>
-                      <div class="row-p"><span class="av-s">VO</span><div class="who"><strong>Valeria Ospina</strong><small>Plan de nutrición · Consulta hoy</small></div><div class="bar"><i style="width: 62%"></i></div></div>
-                      <div class="row-p"><span class="av-s">JR</span><div class="who"><strong>Juliana Restrepo</strong><small>Entrena conmigo · Un logro para celebrar</small></div><div class="bar"><i style="width: 80%"></i></div></div>
-                      <div class="row-p"><span class="av-s">SA</span><div class="who"><strong>Sebastián Arango</strong><small>Plan de nutrición · Retomar el contacto</small></div><div class="bar"><i style="width: 29%"></i></div></div>
-                      <div class="row-p"><span class="av-s">DQ</span><div class="who"><strong>Daniela Quintero</strong><small>LONEVA · Lista de espera</small></div><div class="bar"><i style="width: 10%"></i></div></div>
+                      <h5>Clientas para revisar</h5>
+                      <div class="row-p"><span class="av-s">VO</span><div class="who"><strong>Valeria Ospina</strong><small>Plan personalizado · Consulta hoy</small></div><div class="bar"><i style="width: 62%"></i></div></div>
+                      <div class="row-p"><span class="av-s">JR</span><div class="who"><strong>Juliana Restrepo</strong><small>Membresía · Insignia de 30 días</small></div><div class="bar"><i style="width: 80%"></i></div></div>
+                      <div class="row-p"><span class="av-s">PV</span><div class="who"><strong>Paola Villegas</strong><small>Membresía · 4 días sin check-in</small></div><div class="bar"><i style="width: 29%"></i></div></div>
+                      <div class="row-p"><span class="av-s">DQ</span><div class="who"><strong>Daniela Quintero</strong><small>LONÉVA · Se gradúa el viernes</small></div><div class="bar"><i style="width: 90%"></i></div></div>
                     </div>
                   </div>
                 </div>
 
-                <!-- Contactos -->
+                <!-- Leads -->
                 <div class="panel is-active" id="p-contactos" role="tabpanel">
                   <div class="panel-head">
-                    <div><span class="eyebrow">De la conversación a la relación</span><h4>Contactos.</h4></div>
+                    <div><span class="eyebrow">De la conversación a la relación</span><h4>Leads.</h4></div>
                     <span class="chip-me sage"><span class="live-dot"></span>Actualizado en vivo</span>
                   </div>
                   <div class="contacts">
                     <div class="contact-list" id="contactList"></div>
                     <div id="profile"></div>
                   </div>
+                </div>
+
+                <!-- Clientas -->
+                <div class="panel" id="p-clientas" role="tabpanel">
+                  <div class="panel-head">
+                    <div><span class="eyebrow">Progreso que se ve</span><h4>Clientas.</h4></div>
+                    <span class="chip-me">Índice LONÉVA · inicio → hoy</span>
+                  </div>
+                  <div class="rows">
+                    <div class="r head"><span>Clienta</span><span class="hide-sm">Programa</span><span>Índice LONÉVA</span><span class="hide-sm">Insignias</span></div>
+                    <div class="r">
+                      <div class="who"><span class="av-s">JR</span><div>Juliana Restrepo<small>Check-in hoy</small></div></div>
+                      <span class="hide-sm">Membresía</span>
+                      <div class="indice"><b>48 → 81</b><span class="bar"><i style="width: 81%"></i></span></div>
+                      <span class="hide-sm">🏅 6</span>
+                    </div>
+                    <div class="r">
+                      <div class="who"><span class="av-s">DQ</span><div>Daniela Quintero<small>Check-in hoy</small></div></div>
+                      <span class="hide-sm">LONÉVA · C4</span>
+                      <div class="indice"><b>41 → 74</b><span class="bar"><i style="width: 74%"></i></span></div>
+                      <span class="hide-sm">🏅 4</span>
+                    </div>
+                    <div class="r">
+                      <div class="who"><span class="av-s">VO</span><div>Valeria Ospina<small>Check-in ayer</small></div></div>
+                      <span class="hide-sm">Plan personalizado</span>
+                      <div class="indice"><b>55 → 70</b><span class="bar"><i style="width: 70%"></i></span></div>
+                      <span class="hide-sm">🏅 3</span>
+                    </div>
+                    <div class="r">
+                      <div class="who"><span class="av-s">PV</span><div>Paola Villegas<small>Hace 4 días</small></div></div>
+                      <span class="hide-sm">Membresía</span>
+                      <div class="indice"><b>39 → 52</b><span class="bar"><i style="width: 52%"></i></span></div>
+                      <span class="hide-sm">🏅 2</span>
+                    </div>
+                  </div>
+                  <p class="data-note">El Índice LONÉVA mide sus hábitos al inicio y al final. Datos de ejemplo.</p>
                 </div>
 
                 <!-- Conversaciones -->
@@ -584,6 +671,42 @@
                     <div class="contact-list" id="convoList"></div>
                     <div class="profile" id="convoView"></div>
                   </div>
+                </div>
+
+                <!-- Pagos -->
+                <div class="panel" id="p-pagos" role="tabpanel">
+                  <div class="panel-head">
+                    <div><span class="eyebrow">Vender sin perseguir pagos</span><h4>Pagos.</h4></div>
+                    <span class="chip-me">Stripe · acceso automático al pagar</span>
+                  </div>
+                  <div class="rows">
+                    <div class="r head"><span>Clienta</span><span class="hide-sm">Concepto</span><span>Monto</span><span class="hide-sm">Estado</span></div>
+                    <div class="r">
+                      <div class="who"><span class="av-s">VO</span><div>Valeria Ospina<small>Hoy · 8:12</small></div></div>
+                      <span class="hide-sm">Plan nutricional personalizado</span>
+                      <span class="amount-me">$250</span>
+                      <span class="status hide-sm">Pagado</span>
+                    </div>
+                    <div class="r">
+                      <div class="who"><span class="av-s">JR</span><div>Juliana Restrepo<small>Ayer · renovación</small></div></div>
+                      <span class="hide-sm">Membresía mensual</span>
+                      <span class="amount-me">$39</span>
+                      <span class="status hide-sm">Pagado</span>
+                    </div>
+                    <div class="r">
+                      <div class="who"><span class="av-s">CM</span><div>Carolina Mejía<small>Ayer · 19:40</small></div></div>
+                      <span class="hide-sm">Consulta de nutrición 1:1</span>
+                      <span class="amount-me">$90</span>
+                      <span class="status hide-sm">Pagado</span>
+                    </div>
+                    <div class="r">
+                      <div class="who"><span class="av-s">PV</span><div>Paola Villegas<small>Vence el viernes</small></div></div>
+                      <span class="hide-sm">Membresía mensual</span>
+                      <span class="amount-me">$39</span>
+                      <span class="status pending hide-sm">Recordatorio enviado</span>
+                    </div>
+                  </div>
+                  <p class="data-note">Montos de ejemplo: el precio de tu membresía y tus servicios los defines tú.</p>
                 </div>
 
                 <!-- Editor -->
@@ -600,43 +723,43 @@
                       </div>
                       <div class="control">
                         <label for="titleInput">Titular principal</label>
-                        <textarea id="titleInput" rows="2">Nutrición, movimiento y hábitos para tu vida real.</textarea>
+                        <textarea id="titleInput" rows="2">La longevidad empieza en la mente.</textarea>
                       </div>
                       <div class="control">
                         <span class="label">Color de acento</span>
                         <div class="swatches" id="swatches">
-                          <button class="swatch is-active" style="background: #6f543f" data-color="#6f543f" aria-label="Café"></button>
-                          <button class="swatch" style="background: #6b7f5a" data-color="#6b7f5a" aria-label="Salvia"></button>
-                          <button class="swatch" style="background: #b07f6e" data-color="#b07f6e" aria-label="Rosa arena"></button>
-                          <button class="swatch" style="background: #a88b67" data-color="#a88b67" aria-label="Dorado"></button>
+                          <button class="swatch is-active" style="background: #b37367" data-color="#b37367" aria-label="Rosa terracota"></button>
+                          <button class="swatch" style="background: #dab8b1" data-color="#c99a91" aria-label="Rosa empolvado"></button>
+                          <button class="swatch" style="background: #4a3a2d" data-color="#4a3a2d" aria-label="Café"></button>
+                          <button class="swatch" style="background: #c9a96a" data-color="#b8955a" aria-label="Dorado sutil"></button>
                         </div>
                       </div>
                       <div class="control">
                         <span class="label">Módulos visibles</span>
                         <div class="toggles">
                           <label class="toggle">Programas<input type="checkbox" data-module="programas" checked /><span class="sw"></span></label>
-                          <label class="toggle">Testimonios<input type="checkbox" data-module="testimonios" checked /><span class="sw"></span></label>
-                          <label class="toggle">Consulta<input type="checkbox" data-module="consulta" checked /><span class="sw"></span></label>
-                          <label class="toggle">Tienda<input type="checkbox" data-module="tienda" /><span class="sw"></span></label>
+                          <label class="toggle">Sección PEPS<input type="checkbox" data-module="peps" checked /><span class="sw"></span></label>
+                          <label class="toggle">Guía gratuita<input type="checkbox" data-module="guia" checked /><span class="sw"></span></label>
+                          <label class="toggle">Testimonios<input type="checkbox" data-module="testimonios" /><span class="sw"></span></label>
                         </div>
                       </div>
                       <button class="btn btn-cafe btn-sm" data-toast="Cambios publicados en tu web (vista previa).">Publicar cambios</button>
                     </div>
                     <div>
-                      <div class="preview" id="preview">
+                      <div class="preview" id="preview" style="--pv-accent: #b37367">
                         <div class="pv-top">
                           <div class="pv-logo"><img id="pvLogo" src="assets/img/logo.png" alt="Logo en la vista previa" /></div>
-                          <div class="pv-nav"><span>Inicio</span><span>Servicios</span><span>Consulta</span></div>
+                          <div class="pv-nav"><span>Programas</span><span>Quién soy</span><span>PEPS</span></div>
                         </div>
                         <div class="pv-hero">
-                          <h6 id="pvTitle">Nutrición, movimiento y hábitos para tu vida real.</h6>
-                          <p>Un acompañamiento cálido, a tu ritmo.</p>
-                          <span class="pv-btn">Abrir mi Primer Loto</span>
+                          <h6 id="pvTitle">La longevidad empieza en la mente.</h6>
+                          <p>Enfermera, coach de psiconutrición y personal trainer. Mi misión es servir a través de la salud.</p>
+                          <span class="pv-btn">Reserva tu consulta</span>
                         </div>
-                        <div class="pv-block" data-block="programas"><div class="t">Programas</div><div class="pv-cards"><i></i><i></i><i></i></div></div>
-                        <div class="pv-block" data-block="testimonios"><div class="pv-quote">“Por fin entendí que no se trata de hacerlo perfecto.” — Juliana</div></div>
-                        <div class="pv-block" data-block="consulta"><div class="t">Agenda tu consulta</div><span class="pv-btn">Ver horarios</span></div>
-                        <div class="pv-block" data-block="tienda" hidden><div class="t">Tienda</div><div class="pv-cards"><i></i><i></i><i></i></div></div>
+                        <div class="pv-block" data-block="programas"><div class="t">LONÉVA y servicios</div><div class="pv-cards"><i></i><i></i><i></i></div></div>
+                        <div class="pv-block pv-peps" data-block="peps"><div class="t">Trabajo con Portal Health AI</div><small>Mi protocolo · cómo entrar · valoración médica</small><span class="pv-btn">Empezar mi valoración</span></div>
+                        <div class="pv-block" data-block="guia"><div class="t">Guía anti-dieta extrema</div><span class="pv-btn">Descárgala gratis</span></div>
+                        <div class="pv-block" data-block="testimonios" hidden><div class="pv-quote">“Por fin sé qué comer y en qué porciones.” — Juliana</div></div>
                       </div>
                       <div class="preview-note"><svg class="i" width="14" height="14"><use href="#i-spark" /></svg>Lo que cambias aquí se ve al instante. Publicas cuando estés lista.</div>
                     </div>
@@ -654,24 +777,24 @@
                       <div class="control">
                         <span class="label">¿A quién?</span>
                         <div class="seg-chips" id="segChips">
-                          <button class="seg is-on" data-n="18">Objetivo: más energía</button>
-                          <button class="seg" data-n="9">Programa: Plan de nutrición</button>
-                          <button class="seg" data-n="5">Contactos nuevos</button>
-                          <button class="seg" data-n="4">Sin actividad 7 días</button>
-                          <button class="seg" data-n="24" data-all>Todas mis personas</button>
+                          <button class="seg is-on" data-n="12">Graduadas de LONÉVA</button>
+                          <button class="seg" data-n="18">Membresía activa</button>
+                          <button class="seg" data-n="9">Descargaron la guía</button>
+                          <button class="seg" data-n="4">Sin check-in 7 días</button>
+                          <button class="seg" data-n="31" data-all>Todas mis clientas</button>
                         </div>
                       </div>
                       <div class="control">
                         <span class="label">Canales</span>
                         <div class="channels" id="channels">
                           <label><input type="checkbox" value="push" checked />Push</label>
-                          <label><input type="checkbox" value="WhatsApp" />WhatsApp</label>
+                          <label><input type="checkbox" value="WhatsApp" checked />WhatsApp</label>
                           <label><input type="checkbox" value="correo" />Correo</label>
                         </div>
                       </div>
                       <div class="control">
                         <label for="sigMsg">Mensaje</label>
-                        <textarea id="sigMsg" rows="3">Este lunes empieza el reto de 7 días de energía. ¿Te sumas? 🌿</textarea>
+                        <textarea id="sigMsg" rows="3">¡Terminaste LONÉVA! 🎉 Lo que sigue te espera en mi app: tu membresía con cápsulas de sueño, estrés y antojos.</textarea>
                       </div>
                       <div class="control">
                         <span class="label">¿Cuándo?</span>
@@ -687,10 +810,10 @@
                     </div>
                     <div class="lock-screen" aria-label="Vista previa de la notificación">
                       <div class="time" id="lockTime">7:00</div>
-                      <div class="date" id="lockDate">lunes, 27 de octubre</div>
+                      <div class="date" id="lockDate">lunes, 26 de octubre</div>
                       <div class="notif">
                         <span class="ic"><svg viewBox="0 0 120 100" aria-hidden="true"><use href="#lotus" /></svg></span>
-                        <div><strong>Mariana Echeverri <small>ahora</small></strong><p id="sigPreview">Este lunes empieza el reto de 7 días de energía. ¿Te sumas? 🌿</p></div>
+                        <div><strong>Mariana Echeverri <small>ahora</small></strong><p id="sigPreview"></p></div>
                       </div>
                     </div>
                   </div>
@@ -704,12 +827,12 @@
               <div><strong>Sin escribir nada a mano</strong><span>Lo que la persona responde y conversa aparece aquí solo.</span></div>
             </div>
             <div class="proof">
-              <span class="ic"><svg class="i" width="18" height="18"><use href="#i-msg" /></svg></span>
-              <div><strong>Su historia completa</strong><span>Origen, intención, conversación y siguiente paso en un vistazo.</span></div>
+              <span class="ic"><svg class="i" width="18" height="18"><use href="#i-award" /></svg></span>
+              <div><strong>Progreso que se mide</strong><span>Check-ins, insignias e Índice LONÉVA de cada clienta.</span></div>
             </div>
             <div class="proof">
               <span class="ic"><svg class="i" width="18" height="18"><use href="#i-edit" /></svg></span>
-              <div><strong>Tu página, sin depender de nadie</strong><span>Cambia logo, textos, colores, productos y módulos con vista previa.</span></div>
+              <div><strong>Tu página, sin depender de nadie</strong><span>Cambia logo, textos, colores, programas y secciones con vista previa.</span></div>
             </div>
           </div>
         </div>
@@ -722,7 +845,8 @@
           <span class="kicker" data-reveal>Acto III · Hazlo realidad</span>
           <h2 data-reveal style="--d: 0.1s">Ya lo viviste. <em>Ahora hablemos de números.</em></h2>
           <p class="lead" data-reveal style="--d: 0.2s">
-            Primero los tuyos: lo que hoy se queda sin respuesta. Después los nuestros: inversión, tiempos y garantías.
+            Primero los tuyos: lo que vale cada cohorte de LONÉVA que llega a tu membresía. Después los nuestros: inversión,
+            tiempos y garantías.
           </p>
         </div>
       </section>
@@ -734,50 +858,52 @@
             <div>
               <div class="head" style="margin-bottom: 36px">
                 <span class="kicker" data-reveal>Tus números</span>
-                <h3 data-reveal style="--d: 0.1s">Lo que hoy <em>se queda sin respuesta.</em></h3>
-                <p data-reveal style="--d: 0.2s">Mueve los valores con tu realidad. Es una estimación honesta, no una promesa.</p>
+                <h3 data-reveal style="--d: 0.1s">Lo que vale <em>cada cohorte.</em></h3>
+                <p data-reveal style="--d: 0.2s">
+                  Mueve los valores con tu realidad. El precio de tu membresía aún está por definir: prueba distintos escenarios.
+                </p>
               </div>
               <div class="sliders" data-reveal>
                 <div class="slider">
-                  <label for="cMsgs">Mensajes nuevos por semana <output id="oMsgs" for="cMsgs">25</output></label>
-                  <input type="range" id="cMsgs" min="5" max="100" step="1" value="25" />
+                  <label for="cGrads">Graduadas de LONÉVA al mes <output id="oGrads" for="cGrads">15</output></label>
+                  <input type="range" id="cGrads" min="5" max="60" step="1" value="15" />
                 </div>
                 <div class="slider">
-                  <label for="cMiss">Los que no alcanzas a responder a tiempo <output id="oMiss" for="cMiss">30%</output></label>
-                  <input type="range" id="cMiss" min="0" max="80" step="5" value="30" />
-                  <small>Respuestas que llegan tarde o nunca, cuando ya se enfrió la intención.</small>
+                  <label for="cConv">Las que pasan a tu membresía <output id="oConv" for="cConv">35%</output></label>
+                  <input type="range" id="cConv" min="10" max="80" step="5" value="35" />
+                  <small>Con invitación automática al graduarse y tu IA respondiendo sus dudas.</small>
                 </div>
                 <div class="slider">
-                  <label for="cConv">De cada 10 bien atendidos, cuántos compran <output id="oConv" for="cConv">2 de 10</output></label>
-                  <input type="range" id="cConv" min="1" max="6" step="1" value="2" />
+                  <label for="cPrice">Precio de tu membresía <output id="oPrice" for="cPrice">$39</output></label>
+                  <input type="range" id="cPrice" min="15" max="150" step="1" value="39" />
                 </div>
                 <div class="slider">
-                  <label for="cValue">Valor promedio de un cliente <output id="oValue" for="cValue">$200</output></label>
-                  <input type="range" id="cValue" min="50" max="1000" step="10" value="200" />
+                  <label for="cMonths">Meses que se quedan en promedio <output id="oMonths" for="cMonths">6</output></label>
+                  <input type="range" id="cMonths" min="2" max="12" step="1" value="6" />
                 </div>
               </div>
             </div>
             <div class="result" data-reveal style="--d: 0.15s" aria-live="polite">
-              <span class="kicker">Se te escapan cada mes</span>
-              <div class="big"><span id="rLost">$0</span> <small>USD / mes</small></div>
-              <p id="rPeople">Personas que escribieron y no recibieron respuesta a tiempo.</p>
+              <span class="kicker">Ingreso recurrente que sumas cada mes</span>
+              <div class="big"><span id="rMrr">$0</span> <small>USD / mes</small></div>
+              <p id="rMembers">Clientas nuevas en tu membresía cada mes.</p>
               <div class="compare">
                 <div class="compare-row lost">
-                  <small><span>Lo que se escapa</span><strong id="rLost2">$0</strong></small>
-                  <div class="track"><i id="barLost" style="width: 100%"></i></div>
+                  <small><span>Cada cohorte vale</span><strong id="rCohort">$0</strong></small>
+                  <div class="track"><i id="barMrr" style="width: 100%"></i></div>
                 </div>
                 <div class="compare-row cost">
-                  <small><span>Continuidad &amp; IA</span><strong>$150</strong></small>
+                  <small><span>Continuidad &amp; IA</span><strong>$150 / mes</strong></small>
                   <div class="track"><i id="barCost" style="width: 20%"></i></div>
                 </div>
               </div>
               <div class="payback">
                 <svg class="i" width="18" height="18"><use href="#i-spark" /></svg>
-                <span id="rPayback">Con recuperar 1 cliente al mes, la mensualidad se paga sola.</span>
+                <span id="rPayback">Con 4 clientas activas en tu membresía, la mensualidad se paga sola.</span>
               </div>
               <p class="calc-note">
-                Cálculo: mensajes × 4.3 semanas × % sin respuesta a tiempo × tasa de compra × valor del cliente. No incluye
-                las horas que recuperas tú.
+                Cálculo: graduadas × % que continúa × precio × meses. No incluye consultas 1:1, planes personalizados ni
+                derivaciones a Portal Health. Es una estimación, no una promesa.
               </p>
             </div>
           </div>
@@ -791,7 +917,8 @@
             <span class="kicker" data-reveal>El sistema</span>
             <h2 data-reveal style="--d: 0.1s">Tres raíces. <em>Un mismo ecosistema.</em></h2>
             <p class="lead" data-reveal style="--d: 0.2s">
-              Nace de tu logo: un loto que se abre desde la raíz. Así se organiza todo lo que construimos para ti.
+              Nace de tu logo: un loto que se abre desde la raíz. Cubre todo lo que pediste, en el orden en que tus clientas lo
+              viven.
             </p>
           </div>
           <div class="roots">
@@ -800,61 +927,61 @@
               <span class="kicker">Atraer</span>
               <h3>Tu web y tu <em>asistente.</em></h3>
               <p>
-                La casa digital de tu marca: tu historia, tus servicios y el Primer Loto para recibir a cada persona. Tu
-                asistente con IA responde en la web y en WhatsApp, agenda y te pasa lo importante.
+                Inicio con tu foto y tu presentación, programas con LONÉVA y tus servicios, quién soy, sección PEPS con Portal
+                Health, tu guía gratuita, preguntas frecuentes y contacto. Tu IA atiende 24/7 en la web y en WhatsApp.
               </p>
-              <div class="chips"><span class="chip">Web de experiencia</span><span class="chip">Primer Loto</span><span class="chip">Asistente IA</span><span class="chip">WhatsApp</span><span class="chip">Agenda</span></div>
+              <div class="chips"><span class="chip">Primer Loto</span><span class="chip">Guía anti-dieta extrema</span><span class="chip">Calendly</span><span class="chip">PEPS</span><span class="chip">Asistente IA</span></div>
             </article>
             <article class="root" data-reveal style="--d: 0.1s">
               <span class="glyph"><svg class="i"><use href="#i-sprout" /></svg></span>
               <span class="kicker">Florecer</span>
-              <h3>Loto, <em>su app.</em></h3>
+              <h3>Tu app y <em>tu membresía.</em></h3>
               <p>
-                El espacio diario de cada cliente: plan del día, hábitos, check-ins, programas, contenido, comunidad y un
-                lugar para compartir su experiencia. Con notificaciones según su objetivo.
+                El portal de tus clientas con login: su programa, plan de nutrición, rutinas y progreso. Check-ins diarios,
+                hábitos con insignias, Índice LONÉVA, contenido que se desbloquea por semana y comunidad privada.
               </p>
-              <div class="chips"><span class="chip">Plan del día</span><span class="chip">Hábitos</span><span class="chip">Check-ins</span><span class="chip">Programas</span><span class="chip">Comunidad</span><span class="chip">Notificaciones</span></div>
+              <div class="chips"><span class="chip">Login</span><span class="chip">Check-ins</span><span class="chip">Insignias</span><span class="chip">Índice LONÉVA</span><span class="chip">Comunidad</span><span class="chip">Pagos</span></div>
             </article>
             <article class="root" data-reveal style="--d: 0.2s">
               <span class="glyph"><svg class="i"><use href="#i-roots" /></svg></span>
               <span class="kicker">Sostener</span>
               <h3>Raíz, <em>tu panel.</em></h3>
               <p>
-                Todas tus personas con su historia, las conversaciones de tu IA en tiempo real, consultas, programas,
-                contenido, reportes, editor de página con vista previa y señales de marketing.
+                Leads, clientas, pagos, agenda y progreso en un solo lugar. Las conversaciones de tu IA en tiempo real, editor de
+                página con vista previa y señales de marketing para tus clientas.
               </p>
-              <div class="chips"><span class="chip">Contactos</span><span class="chip">Conversaciones</span><span class="chip">Consultas</span><span class="chip">Reportes</span><span class="chip">Editor</span><span class="chip">Señales</span></div>
+              <div class="chips"><span class="chip">Leads</span><span class="chip">Clientas</span><span class="chip">Pagos</span><span class="chip">Agenda</span><span class="chip">Editor</span><span class="chip">Señales</span></div>
             </article>
           </div>
 
           <div class="autos">
             <div class="autos-head">
               <h3 data-reveal>14 automatizaciones en n8n <em>que trabajan por ti.</em></h3>
-              <p data-reveal style="--d: 0.1s">Conectadas a tu web, Loto, Raíz y WhatsApp. Lo repetitivo ocurre solo; lo humano sigue siendo tuyo.</p>
+              <p data-reveal style="--d: 0.1s">Conectadas a tu web, tu app, Raíz, Stripe, Calendly y WhatsApp. Lo repetitivo ocurre solo; lo humano sigue siendo tuyo.</p>
             </div>
             <div class="auto-cols">
               <div class="auto-col" data-reveal>
                 <h4>Atraer <small>01 — 06</small></h4>
-                <div class="auto-item"><strong><span>01</span>Recepción y registro</strong><p>Al completar el Primer Loto: crea el contacto en Raíz, le da la bienvenida por WhatsApp y te avisa.</p></div>
-                <div class="auto-item"><strong><span>02</span>Asistente en tu web</strong><p>Responde con tu tono y tu información, captura sus datos y guarda toda la conversación.</p></div>
+                <div class="auto-item"><strong><span>01</span>Guía anti-dieta extrema</strong><p>Al descargarla: se la envía por correo y WhatsApp, crea el lead en Raíz y te avisa.</p></div>
+                <div class="auto-item"><strong><span>02</span>Asistente en tu web</strong><p>Responde dudas frecuentes con tu voz, 24/7, y guarda toda la conversación.</p></div>
                 <div class="auto-item"><strong><span>03</span>Asistente en WhatsApp</strong><p>Continúa la misma conversación; si piden hablar contigo, te la pasa con contexto.</p></div>
-                <div class="auto-item"><strong><span>04</span>Clasificación</strong><p>Al cerrar cada conversación detecta interés y temperatura, y te deja el siguiente paso.</p></div>
-                <div class="auto-item"><strong><span>05</span>Seguimiento que no enfría</strong><p>Si no responde en 24 h, 72 h o 7 días, envía un mensaje cálido y personalizado.</p></div>
-                <div class="auto-item"><strong><span>06</span>Agenda de consultas</strong><p>Confirma la cita y envía recordatorios 24 h y 2 h antes.</p></div>
+                <div class="auto-item"><strong><span>04</span>Seguimiento que no enfría</strong><p>Si un lead no responde en 24 h, 72 h o 7 días, un mensaje cálido y personalizado.</p></div>
+                <div class="auto-item"><strong><span>05</span>Consultas con Calendly</strong><p>Al reservar: confirma, registra la cita en Raíz y envía recordatorios 24 h y 2 h antes.</p></div>
+                <div class="auto-item"><strong><span>06</span>Derivación a Portal Health</strong><p>Registra cada clic en tu link de referida desde PEPS y le da seguimiento.</p></div>
               </div>
               <div class="auto-col" data-reveal style="--d: 0.1s">
-                <h4>Florecer <small>07 — 10</small></h4>
-                <div class="auto-item"><strong><span>07</span>Pago → acceso a Loto</strong><p>Al confirmar el pago la vuelve cliente, la inscribe en su programa y le envía su acceso.</p></div>
-                <div class="auto-item"><strong><span>08</span>Plan del día</strong><p>Cada mañana prepara sus acciones y le envía una notificación según su objetivo.</p></div>
-                <div class="auto-item"><strong><span>09</span>Volver a su ritmo</strong><p>Tras 2 días sin actividad, un mensaje amable para ella y un aviso para ti en Raíz.</p></div>
-                <div class="auto-item"><strong><span>10</span>Logros y experiencias</strong><p>Al completar una semana o un reto la felicita y le pide su experiencia para tu aprobación.</p></div>
+                <h4>Florecer <small>07 — 11</small></h4>
+                <div class="auto-item"><strong><span>07</span>Pago → acceso automático</strong><p>Stripe confirma y abre su programa o su membresía al instante, sin que muevas un dedo.</p></div>
+                <div class="auto-item"><strong><span>08</span>Graduación de LONÉVA → tu app</strong><p>Al terminar las 8 semanas: invitación personal a tu app y a tu membresía.</p></div>
+                <div class="auto-item"><strong><span>09</span>Contenido por semana</strong><p>Desbloquea cada semana su contenido y le avisa con una notificación.</p></div>
+                <div class="auto-item"><strong><span>10</span>Check-in e insignias</strong><p>Recordatorio diario suave y una insignia cuando sostiene un hábito.</p></div>
+                <div class="auto-item"><strong><span>11</span>Volver a su ritmo</strong><p>Tras 2 días sin check-in, un mensaje amable para ella y un aviso para ti en Raíz.</p></div>
               </div>
               <div class="auto-col" data-reveal style="--d: 0.2s">
-                <h4>Sostener <small>11 — 14</small></h4>
-                <div class="auto-item"><strong><span>11</span>Tu resumen de la mañana</strong><p>A las 6:30 a. m. por WhatsApp: a quién revisar, consultas del día y oportunidades nuevas.</p></div>
-                <div class="auto-item"><strong><span>12</span>Preparación de consultas</strong><p>Una hora antes, la IA resume historia, check-ins y avance en su perfil.</p></div>
-                <div class="auto-item"><strong><span>13</span>Señales de marketing</strong><p>Campañas por objetivo, programa o etapa, por push, WhatsApp y correo.</p></div>
-                <div class="auto-item"><strong><span>14</span>Cuidado de tu capacidad IA</strong><p>Mide el uso del mes y te avisa antes del límite. Sin cargos sorpresa.</p></div>
+                <h4>Sostener <small>12 — 14</small></h4>
+                <div class="auto-item"><strong><span>12</span>Índice LONÉVA</strong><p>Calcula su puntaje de hábitos al inicio y al final, y arma su reporte de avance.</p></div>
+                <div class="auto-item"><strong><span>13</span>Tu resumen de la mañana</strong><p>A las 6:30 a. m. por WhatsApp: leads, clientas por revisar, pagos y agenda del día.</p></div>
+                <div class="auto-item"><strong><span>14</span>Señales de marketing</strong><p>Campañas por programa, etapa u objetivo, por push, WhatsApp y correo.</p></div>
               </div>
             </div>
             <div class="guardrail" data-reveal>
@@ -862,8 +989,8 @@
               <div>
                 <strong>Tu IA tiene límites claros.</strong>
                 <p>
-                  Se presenta como asistente con IA, usa solo la información que tú apruebes y nunca diagnostica, receta ni
-                  promete resultados. Los temas de salud sensibles se derivan siempre a una consulta contigo.
+                  Se presenta como asistente con IA, usa solo la información que tú apruebes y nunca diagnostica, da dosis ni
+                  promete resultados. Lo médico de los péptidos lo valora Portal Health; lo demás, tu consulta.
                 </p>
               </div>
             </div>
@@ -887,93 +1014,93 @@
             <div class="inv-row">
               <button class="inv-btn" aria-expanded="false">
                 <span class="n">01</span>
-                <span class="t">Estrategia, arquitectura y design system<small>El recorrido completo y tu identidad convertida en sistema.</small></span>
+                <span class="t">Estrategia, arquitectura y design system<small>Tu modelo de negocio y tu identidad convertidos en sistema.</small></span>
                 <span class="p">$250</span>
                 <span class="chev"><svg class="i" width="14" height="14"><use href="#i-chev" /></svg></span>
               </button>
               <div class="inv-detail"><div><ul>
-                <li>Mapa del recorrido: del primer contacto al acompañamiento</li>
-                <li>Estructura de datos y roles: tú como administradora, tus clientes como miembros</li>
-                <li>Design system con los colores, tipografías y componentes de tu marca</li>
+                <li>Recorrido completo: Déjà Vu → LONÉVA → tu app → membresía</li>
+                <li>Estructura de datos y roles: tú como dueña, tus clientas como miembros</li>
+                <li>Design system con tu paleta: rosa empolvado, beige cálido, café, terracota y dorado</li>
                 <li>Guía de tono para la web, la IA y los mensajes</li>
               </ul></div></div>
             </div>
             <div class="inv-row">
               <button class="inv-btn" aria-expanded="false">
                 <span class="n">02</span>
-                <span class="t">Web de experiencia + Primer Loto<small>Tu casa digital y una bienvenida que se siente.</small></span>
+                <span class="t">Web Nutrición &amp; Longevidad + Primer Loto<small>Tu casa digital, en el orden que pediste.</small></span>
                 <span class="p">$400</span>
                 <span class="chev"><svg class="i" width="14" height="14"><use href="#i-chev" /></svg></span>
               </button>
               <div class="inv-detail"><div><ul>
-                <li>Inicio, tu historia, servicios, programas y consulta</li>
-                <li>Primer Loto: de beige a blanco con cada respuesta</li>
-                <li>Música ambiental y efectos de sonido opcionales</li>
-                <li>Formularios conectados a Raíz, con consentimiento de datos</li>
-                <li>SEO base, velocidad y enlace para tu bio de Instagram</li>
-                <li>Diseño para celular, tablet y computador</li>
+                <li>Inicio con tu foto, tu nombre y tu presentación</li>
+                <li>Programas: LONÉVA y tus servicios, con reserva por Calendly</li>
+                <li>Quién soy: tu historia y credenciales</li>
+                <li>Sección PEPS con Portal Health: tu protocolo, pasos y link de referida</li>
+                <li>Guía anti-dieta extrema para captar leads, preguntas frecuentes y contacto</li>
+                <li>Primer Loto de beige a blanco, música ambiental opcional y diseño para celular</li>
               </ul></div></div>
             </div>
             <div class="inv-row">
               <button class="inv-btn" aria-expanded="false">
                 <span class="n">03</span>
-                <span class="t">Asistente IA de Mariana · web + WhatsApp<small>Primera atención inmediata, con tu voz y tus límites.</small></span>
+                <span class="t">Asistente IA de Mariana · web + WhatsApp<small>Atiende sin que estés pegada al teléfono.</small></span>
                 <span class="p">$350</span>
                 <span class="chev"><svg class="i" width="14" height="14"><use href="#i-chev" /></svg></span>
               </button>
               <div class="inv-detail"><div><ul>
-                <li>Base de conocimiento con tu historia, servicios y preguntas frecuentes</li>
+                <li>Base de conocimiento con tu historia, LONÉVA, membresía, consultas y Portal Health</li>
                 <li>Tu tono: cálido, cercano y sin presión</li>
-                <li>Atención 24/7 en web y WhatsApp, con la conversación unificada</li>
-                <li>Captura de datos, agenda y paso a ti con contexto</li>
-                <li>Límites de salud y temas sensibles configurados</li>
+                <li>Dudas frecuentes y recordatorios 24/7 en web y WhatsApp</li>
+                <li>Captura de leads, reserva de consultas y paso a ti con contexto</li>
+                <li>Límites de salud configurados: sin dosis ni diagnósticos</li>
               </ul></div></div>
             </div>
             <div class="inv-row">
               <button class="inv-btn" aria-expanded="false">
                 <span class="n">04</span>
-                <span class="t">Loto · la app de tus clientes<small>Su espacio diario, instalado en su celular.</small></span>
+                <span class="t">App y portal de clientas<small>Su espacio diario, con login e instalable en su celular.</small></span>
                 <span class="p">$450</span>
                 <span class="chev"><svg class="i" width="14" height="14"><use href="#i-chev" /></svg></span>
               </button>
               <div class="inv-detail"><div><ul>
-                <li>Instalable desde la web en iPhone, Android y computador</li>
-                <li>Hoy: plan del día, hábitos y enfoque</li>
-                <li>Programas con etapas, contenido y progreso</li>
-                <li>Check-ins de ánimo y prioridades</li>
-                <li>Comunidad, retos y “Comparte tu experiencia”</li>
-                <li>Notificaciones push según objetivo y avance</li>
+                <li>Login: su programa, su plan de nutrición, sus rutinas y su progreso</li>
+                <li>Check-ins diarios de sueño, agua, ánimo y movimiento</li>
+                <li>Hábitos con insignias e Índice LONÉVA al inicio y al final</li>
+                <li>Contenido que se desbloquea por semana</li>
+                <li>Comunidad privada dentro de la misma plataforma</li>
+                <li>Instalable como app, con notificaciones según su objetivo</li>
               </ul></div></div>
             </div>
             <div class="inv-row">
               <button class="inv-btn" aria-expanded="false">
                 <span class="n">05</span>
-                <span class="t">Raíz · tu panel y CRM<small>Tu centro de operaciones, con editor de página.</small></span>
+                <span class="t">Raíz · tu panel y CRM<small>Leads, clientas, pagos, agenda y progreso en un solo lugar.</small></span>
                 <span class="p">$500</span>
                 <span class="chev"><svg class="i" width="14" height="14"><use href="#i-chev" /></svg></span>
               </button>
               <div class="inv-detail"><div><ul>
-                <li>Hoy: lo que necesita tu atención</li>
-                <li>Contactos con su historia completa</li>
+                <li>Leads con su origen, intención y conversación</li>
+                <li>Clientas con check-ins, insignias e Índice LONÉVA</li>
+                <li>Pagos de Stripe y agenda de Calendly en el mismo panel</li>
                 <li>Conversaciones de tu IA en tiempo real, con opción de tomarlas</li>
-                <li>Consultas, programas, contenido y comunidad</li>
-                <li>Reportes de participación y crecimiento</li>
-                <li>Editor con vista previa: logo, colores, productos, módulos y textos</li>
+                <li>Editor con vista previa: logo, colores, programas, secciones y textos</li>
+                <li>Señales de marketing segmentadas para tus clientas</li>
               </ul></div></div>
             </div>
             <div class="inv-row">
               <button class="inv-btn" aria-expanded="false">
                 <span class="n">06</span>
-                <span class="t">Automatizaciones n8n + señales de marketing<small>14 flujos que sostienen la operación por ti.</small></span>
+                <span class="t">Pagos, automatizaciones n8n y señales<small>14 flujos que venden, acompañan y sostienen por ti.</small></span>
                 <span class="p">$400</span>
                 <span class="chev"><svg class="i" width="14" height="14"><use href="#i-chev" /></svg></span>
               </button>
               <div class="inv-detail"><div><ul>
-                <li>Captación, conversión, acompañamiento y operación</li>
-                <li>Seguimientos automáticos a las 24 h, 72 h y 7 días</li>
-                <li>Recordatorios de consulta y resumen diario para ti</li>
-                <li>Señales segmentadas por push, WhatsApp y correo</li>
-                <li>Registro de cada ejecución y alertas ante cualquier fallo</li>
+                <li>Pagos en línea de programas y membresía con acceso automático</li>
+                <li>Graduación de LONÉVA → invitación a tu app y membresía</li>
+                <li>Guía gratuita, seguimiento de leads y recordatorios de consulta</li>
+                <li>Contenido semanal, check-ins, insignias e Índice LONÉVA</li>
+                <li>Resumen diario para ti y registro de cada ejecución</li>
               </ul></div></div>
             </div>
             <div class="inv-row">
@@ -985,7 +1112,7 @@
               </button>
               <div class="inv-detail"><div><ul>
                 <li>Base de datos centralizada y segura, con copias de respaldo</li>
-                <li>Conexión de dominio, WhatsApp Business, agenda y pagos</li>
+                <li>Conexión de dominio, Stripe, Calendly, WhatsApp Business y tu link de Portal Health</li>
                 <li>Pruebas completas en celular y computador</li>
                 <li>Publicación y capacitación para usar Raíz</li>
               </ul></div></div>
@@ -1020,7 +1147,7 @@
               </div>
               <ul>
                 <li><svg class="i" width="16" height="16"><use href="#i-check" /></svg><span>Ejecución inmediata al confirmar el pago</span></li>
-                <li><svg class="i" width="16" height="16"><use href="#i-check" /></svg><span><strong>Entrega total en 4 horas</strong>: web, Primer Loto, asistente, Loto, Raíz y automatizaciones</span></li>
+                <li><svg class="i" width="16" height="16"><use href="#i-check" /></svg><span><strong>Entrega total en 4 horas</strong>: web, Primer Loto, asistente, app, Raíz, pagos y automatizaciones</span></li>
                 <li><svg class="i" width="16" height="16"><use href="#i-check" /></svg><span>Reunión de revisión total de la página con correcciones en vivo</span></li>
                 <li><svg class="i" width="16" height="16"><use href="#i-check" /></svg><span>Prioridad absoluta en nuestra agenda</span></li>
               </ul>
@@ -1055,7 +1182,7 @@
             <div class="guarantee" data-reveal style="--d: 0.05s">
               <span class="ic"><svg class="i" width="20" height="20"><use href="#i-key" /></svg></span>
               <strong>Todo es tuyo</strong>
-              <p>Código, dominio, datos de tus clientes y contenido quedan a tu nombre. Siempre.</p>
+              <p>Infraestructura propia: código, dominio, datos de tus clientas y contenido quedan a tu nombre.</p>
             </div>
             <div class="guarantee" data-reveal style="--d: 0.1s">
               <span class="ic"><svg class="i" width="20" height="20"><use href="#i-unlock" /></svg></span>
@@ -1089,19 +1216,18 @@
             </div>
             <div>
               <ul class="includes">
-                <li><svg class="i" width="16" height="16"><use href="#i-check" /></svg><span>Hosting de web, Loto y Raíz<small>Rápido, seguro y disponible</small></span></li>
+                <li><svg class="i" width="16" height="16"><use href="#i-check" /></svg><span>Hosting de web, app y Raíz<small>Rápido, seguro y disponible</small></span></li>
                 <li><svg class="i" width="16" height="16"><use href="#i-check" /></svg><span>Servidor n8n con tus 14 flujos<small>Monitoreados y funcionando</small></span></li>
                 <li><svg class="i" width="16" height="16"><use href="#i-check" /></svg><span>IA: hasta 300 conversaciones<small>En web y WhatsApp</small></span></li>
-                <li><svg class="i" width="16" height="16"><use href="#i-check" /></svg><span>Notificaciones push ilimitadas<small>Para todas tus personas</small></span></li>
+                <li><svg class="i" width="16" height="16"><use href="#i-check" /></svg><span>Notificaciones push ilimitadas<small>Para todas tus clientas</small></span></li>
                 <li><svg class="i" width="16" height="16"><use href="#i-check" /></svg><span>Base de datos y copias de seguridad<small>Tu información protegida</small></span></li>
                 <li><svg class="i" width="16" height="16"><use href="#i-check" /></svg><span>Mantenimiento y seguridad<small>Actualizaciones continuas</small></span></li>
                 <li><svg class="i" width="16" height="16"><use href="#i-check" /></svg><span>Soporte por WhatsApp<small>Respuesta en máximo 24 h hábiles</small></span></li>
                 <li><svg class="i" width="16" height="16"><use href="#i-check" /></svg><span>Ajustes menores incluidos<small>Textos, imágenes y configuraciones</small></span></li>
               </ul>
               <p class="not-included">
-                No incluye: costos de Meta por plantillas de WhatsApp de marketing (se facturan a tu cuenta), comisiones de tu
-                pasarela de pagos, registro anual del dominio ni módulos nuevos. Todo adicional se cotiza antes y solo avanza
-                con tu aprobación.
+                No incluye: comisiones de Stripe, plan de Calendly, costos de Meta por plantillas de WhatsApp de marketing,
+                registro anual del dominio ni módulos nuevos. Todo adicional se cotiza antes y solo avanza con tu aprobación.
               </p>
             </div>
           </div>
@@ -1118,7 +1244,7 @@
           </div>
           <ol class="clock">
             <li data-reveal><span class="h">Hora 0</span><strong>Arranque</strong><p>Confirmas el pago y en 15 minutos recibimos tu material y accesos.</p></li>
-            <li data-reveal style="--d: 0.05s"><span class="h">Horas 1–3</span><strong>Construcción</strong><p>Web, Primer Loto, asistente, Loto, Raíz y automatizaciones sobre una infraestructura ya probada.</p></li>
+            <li data-reveal style="--d: 0.05s"><span class="h">Horas 1–3</span><strong>Construcción</strong><p>Web, Primer Loto, asistente, app, Raíz, pagos y automatizaciones sobre una infraestructura ya probada.</p></li>
             <li data-reveal style="--d: 0.1s"><span class="h">Hora 4</span><strong>Revisión en vivo</strong><p>Recorremos todo contigo y corregimos en el momento.</p></li>
             <li data-reveal style="--d: 0.15s"><span class="h">Al aire</span><strong>Publicación</strong><p>Tu ecosistema publicado y Raíz en tus manos, con capacitación.</p></li>
           </ol>
@@ -1133,14 +1259,15 @@
             <div class="needs" data-reveal>
               <h3>Lo que necesitamos <em>de ti</em></h3>
               <ul>
-                <li class="ok"><span class="box"><svg class="i" width="12" height="12"><use href="#i-check" /></svg></span>Logo de la marca<span class="chip">Ya lo tenemos</span></li>
-                <li><span class="box"></span>Fotos profesionales en alta calidad</li>
-                <li><span class="box"></span>Servicios, programas y precios</li>
-                <li><span class="box"></span>Preguntas frecuentes y límites para tu IA</li>
+                <li class="ok"><span class="box"><svg class="i" width="12" height="12"><use href="#i-check" /></svg></span>Logo, paleta y resumen del proyecto<span class="chip">Ya lo tenemos</span></li>
+                <li class="ok"><span class="box"><svg class="i" width="12" height="12"><use href="#i-check" /></svg></span>Tu link de referida de Portal Health<span class="chip">Ya lo tenemos</span></li>
+                <li><span class="box"></span>Fotos naturales tuyas en alta calidad</li>
+                <li><span class="box"></span>Tu Guía anti-dieta extrema (PDF)</li>
+                <li><span class="box"></span>Precio de tu membresía y de tus servicios 1:1</li>
+                <li><span class="box"></span>Cuentas de Stripe y Calendly</li>
                 <li><span class="box"></span>Número de WhatsApp Business</li>
-                <li><span class="box"></span>Dominio (o te ayudamos a elegirlo)</li>
-                <li><span class="box"></span>Cuenta de pagos: Stripe u otra pasarela</li>
-                <li><span class="box"></span>Calendario para tus consultas</li>
+                <li><span class="box"></span>Logo y lineamientos de marca de Portal Health</li>
+                <li><span class="box"></span>Contenido de tus cápsulas y preguntas frecuentes</li>
               </ul>
             </div>
             <div class="terms" data-reveal style="--d: 0.1s">
@@ -1149,12 +1276,15 @@
                 <li>Los tiempos de entrega corren desde la confirmación del pago y la recepción del material base.</li>
                 <li>Toda entrega incluye una reunión de revisión total de la página con correcciones en vivo.</li>
                 <li>
-                  Las aprobaciones de terceros (Meta / WhatsApp Business, dominio, pasarela de pagos) siguen sus propios
-                  tiempos. Si alguna se demora, el sistema se entrega funcionando y esa conexión se activa en cuanto el
-                  proveedor apruebe.
+                  Las aprobaciones de terceros (Meta / WhatsApp Business, Stripe, dominio) siguen sus propios tiempos. Si alguna
+                  se demora, el sistema se entrega funcionando y esa conexión se activa en cuanto el proveedor apruebe.
                 </li>
-                <li>Loto se instala desde la web. La publicación en App Store y Google Play hace parte de la Fase 2.</li>
-                <li>El asistente con IA no reemplaza tu criterio profesional ni da indicaciones médicas.</li>
+                <li>LONÉVA se entrega en la plataforma de Déjà Vu; tu ecosistema recibe a tus graduadas y todo lo que es 100% tuyo.</li>
+                <li>
+                  La sección PEPS es educativa: la valoración médica, la venta y la atención las hace Portal Health. Ni tu web
+                  ni tu IA dan dosis ni indicaciones médicas.
+                </li>
+                <li>La app se instala desde la web. La publicación en App Store y Google Play hace parte de la Fase 2.</li>
                 <li>Propuesta vigente hasta el <span data-bind="validUntilText">28 de octubre de 2026</span>.</li>
               </ul>
             </div>
@@ -1166,27 +1296,26 @@
             <p data-reveal style="--d: 0.2s">Se suma sin rehacer nada y se cotiza cuando tu crecimiento lo pida.</p>
           </div>
           <div class="grow" data-reveal>
-            <span><strong>Loto</strong> en App Store y Google Play</span>
-            <span><strong>LONEVA</strong>, programa de longevidad para mujeres</span>
-            <span><strong>Membresías</strong> y pagos recurrentes</span>
-            <span><strong>Tienda</strong> de la marca</span>
-            <span><strong>Referidos</strong></span>
-            <span><strong>Eventos</strong> y retos</span>
+            <span><strong>Membresía virtual</strong> para miembros de Déjà Vu</span>
+            <span><strong>Tu app</strong> en App Store y Google Play</span>
+            <span><strong>Tienda</strong> de recetarios y recursos</span>
+            <span><strong>Referidos</strong> entre tus clientas</span>
+            <span><strong>Eventos</strong> y retos en vivo</span>
             <span><strong>Analítica</strong> avanzada</span>
-            <span><strong>Equipo</strong> y roles</span>
+            <span><strong>Equipo</strong> y roles (Luis Esteban u otros)</span>
           </div>
         </div>
       </section>
 
       <!-- Cierre -->
-      <section class="section dark closing" id="aprobar">
+      <section class="section closing" id="aprobar">
         <div class="container">
           <svg class="lotus-xl" viewBox="0 0 120 100" aria-hidden="true" data-reveal><use href="#lotus" /></svg>
           <p class="quote" data-reveal style="--d: 0.1s">
             Que la tecnología sostenga la estructura, <em>para que tú sostengas lo que nadie más puede.</em>
           </p>
           <p class="quote-sub" data-reveal style="--d: 0.2s">
-            Tu criterio, tu conocimiento, tu cercanía y tu forma de acompañar. Eso no se automatiza: se protege.
+            “No hay nada más espiritual que cuidar tu cuerpo.” <span class="script" style="font-size: 1.9rem; color: var(--terracota)">Mariana</span>
           </p>
 
           <div class="summary" data-reveal>
@@ -1198,7 +1327,7 @@
               <span class="approved-badge"><svg class="i" width="14" height="14"><use href="#i-check" /></svg>Aprobada</span>
             </div>
             <div class="summary-body">
-              <div class="sum-row"><span>Web + Primer Loto + asistente IA + Loto + Raíz + 14 automatizaciones</span><span>Fase 1 completa</span></div>
+              <div class="sum-row"><span>Web + Primer Loto + asistente IA + app de clientas + Raíz + pagos + 14 automatizaciones</span><span>Fase 1 completa</span></div>
               <div class="sum-row"><span>Pago de contado</span><span>Entrega total en 4 h</span></div>
               <div class="sum-row"><span>Abono del 50% ($1,250)</span><span>Inicio en 8 h · entrega en 2 días</span></div>
               <div class="sum-row"><span>Continuidad &amp; IA</span><span>$150 / mes</span></div>
@@ -1219,7 +1348,7 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <div class="footer-brand"><svg viewBox="0 0 120 100" aria-hidden="true"><use href="#lotus" /></svg>Mariana Echeverri · Wellness &amp; Nutrition</div>
+        <div class="footer-brand"><svg viewBox="0 0 120 100" aria-hidden="true"><use href="#lotus" /></svg>Mariana Echeverri · Nutrición &amp; Longevidad</div>
         <div>Propuesta privada · Preparada por <span data-bind="preparedBy">Michelle Pedraza</span> · Octubre 2026</div>
       </div>
     </footer>
@@ -1247,10 +1376,10 @@
 
           <div class="r-step is-active" data-step="0">
             <span class="kicker">Primer Loto</span>
-            <h3>Empecemos <em>por ti.</em></h3>
+            <h3>La longevidad empieza <em>en la mente.</em></h3>
             <p>Respira. Este espacio es tuyo. Cuéntanos qué te gustaría hacer posible, un paso a la vez.</p>
             <div class="r-actions"><button class="btn btn-cafe" data-r-next>Comenzar <span class="arrow" aria-hidden="true">→</span></button></div>
-            <div class="r-note">Así recibirá tu web a cada persona · Tus respuestas viajarán a Raíz, tu panel</div>
+            <div class="r-note">Así recibirá tu web a cada mujer · Sus respuestas viajarán a Raíz, tu panel</div>
           </div>
 
           <div class="r-step" data-step="1">
@@ -1266,11 +1395,11 @@
             <h3><span data-r="name"></span>, ¿qué te trae <em>por aquí?</em></h3>
             <p>Elige lo que más se parezca a lo que buscas hoy.</p>
             <div class="r-options" data-r-group="intent">
-              <button class="r-opt" data-phrase="quieres mejorar tu alimentación">Quiero mejorar mi alimentación<span class="radio"></span></button>
-              <button class="r-opt" data-phrase="quieres comenzar un programa">Quiero comenzar un programa<span class="radio"></span></button>
-              <button class="r-opt" data-phrase="quieres entrenar con intención">Quiero entrenar<span class="radio"></span></button>
-              <button class="r-opt" data-phrase="te interesa una consulta">Quiero una consulta<span class="radio"></span></button>
-              <button class="r-opt" data-phrase="quieres saber por dónde empezar">Quiero saber por dónde empezar<span class="radio"></span></button>
+              <button class="r-opt" data-phrase="quieres dejar las dietas extremas" data-key="dietas">Quiero dejar las dietas extremas<span class="radio"></span></button>
+              <button class="r-opt" data-phrase="quieres saber qué comer y en qué porciones" data-key="porciones">Quiero saber qué comer y en qué porciones<span class="radio"></span></button>
+              <button class="r-opt" data-phrase="terminaste LONÉVA y quieres seguir" data-key="loneva">Terminé LONÉVA y quiero seguir<span class="radio"></span></button>
+              <button class="r-opt" data-phrase="te interesa una consulta de nutrición 1:1" data-key="consulta">Quiero una consulta de nutrición 1:1<span class="radio"></span></button>
+              <button class="r-opt" data-phrase="quieres conocer los péptidos con respaldo médico" data-key="peps">Quiero conocer los péptidos con respaldo médico<span class="radio"></span></button>
             </div>
             <div class="r-actions"><button class="r-link" data-r-back>Volver</button></div>
           </div>
@@ -1281,11 +1410,11 @@
             <p>No hay una respuesta correcta. Solo la tuya.</p>
             <div class="r-options two" data-r-group="feel">
               <button class="r-opt" data-phrase="tener más energía" data-focus="Más energía.">Más energía<span class="radio"></span></button>
-              <button class="r-opt" data-phrase="sentirte en calma" data-focus="Calma.">Más calma<span class="radio"></span></button>
-              <button class="r-opt" data-phrase="ganar fuerza" data-focus="Fuerza.">Más fuerza<span class="radio"></span></button>
+              <button class="r-opt" data-phrase="tener menos antojos" data-focus="Menos antojos.">Menos antojos<span class="radio"></span></button>
+              <button class="r-opt" data-phrase="dormir mejor" data-focus="Descanso.">Dormir mejor<span class="radio"></span></button>
+              <button class="r-opt" data-phrase="recomponer tu cuerpo" data-focus="Fuerza.">Recomponer mi cuerpo<span class="radio"></span></button>
               <button class="r-opt" data-phrase="comer sin culpa" data-focus="Paz con la comida.">Paz con la comida<span class="radio"></span></button>
               <button class="r-opt" data-phrase="ser más constante" data-focus="Constancia.">Constancia<span class="radio"></span></button>
-              <button class="r-opt" data-phrase="descansar mejor" data-focus="Descanso.">Mejor descanso<span class="radio"></span></button>
             </div>
             <div class="r-actions"><button class="r-link" data-r-back>Volver</button></div>
           </div>

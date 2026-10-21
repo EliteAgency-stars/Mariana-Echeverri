@@ -8,9 +8,7 @@ const MODELO = "claude-opus-5-5";
 const MAX_MENSAJES = 20;
 const MAX_CARACTERES = 800;
 const RESPUESTA_SEGURA =
-  "Ese tema prefiero que lo converses directamente con Mariana en una consulta personalizada. ¿Te ayudo a agendarla? 🌿";
-// Tema que la marca nunca menciona: si aparece en una respuesta, se reemplaza por la respuesta segura.
-const TEMA_RESTRINGIDO = /p[eé]pt[ií]d/i;
+  "Ese tema prefiero que lo converses directamente con Mariana en una consulta 1:1. ¿Te ayudo a reservarla? 🌿";
 
 let cliente;
 const obtenerCliente = () => (cliente ??= new Anthropic());
@@ -80,7 +78,7 @@ export default async function handler(req, res) {
             .join("")
             .trim();
 
-    if (!texto || TEMA_RESTRINGIDO.test(texto)) texto = RESPUESTA_SEGURA;
+    if (!texto) texto = RESPUESTA_SEGURA;
     return res.status(200).json({ respuesta: texto, envivo: true });
   } catch (error) {
     if (error instanceof Anthropic.RateLimitError) {

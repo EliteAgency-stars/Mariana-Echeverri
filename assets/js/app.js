@@ -107,19 +107,18 @@ function haceCuanto(iso) {
 }
 
 function temperatura(perfil) {
-  const t = perfil.intencion;
-  if (/consulta|programa/.test(t)) return "Alta";
-  if (/alimentación|entrenar/.test(t)) return "Media-alta";
-  return "Media";
+  return ["loneva", "consulta", "peps"].includes(perfil.clave) ? "Alta" : "Media-alta";
 }
 
 function siguientePaso(perfil) {
-  const t = perfil.intencion;
-  if (/consulta/.test(t)) return "Ofrecerle horarios de consulta hoy mismo.";
-  if (/programa/.test(t)) return "Mostrarle el programa que mejor encaja con su objetivo.";
-  if (/entrenar/.test(t)) return "Enviarle Entrena conmigo y agendar una primera sesión.";
-  if (/alimentación/.test(t)) return "Proponerle una consulta de nutrición para entender su rutina.";
-  return "Proponerle una consulta inicial para definir su primer paso.";
+  const pasos = {
+    consulta: "Enviarle tu Calendly para su consulta 1:1.",
+    loneva: "Invitarla a tu app y presentarle la membresía.",
+    peps: "Compartirle tu protocolo y tu link de Portal Health para su valoración médica.",
+    porciones: "Enviarle la Guía anti-dieta extrema y ofrecerle una consulta para su plan.",
+    dietas: "Enviarle la Guía anti-dieta extrema y presentarle LONÉVA.",
+  };
+  return pasos[perfil.clave] || "Enviarle la Guía anti-dieta extrema y ofrecerle una consulta.";
 }
 
 /* ---------- Registro de eventos (Supabase) ---------- */
@@ -304,7 +303,7 @@ function actualizarTodo() {
 
 function initRitual() {
   const ritual = $("#ritual");
-  const COLORS = ["#E7DFD2", "#ECE5DA", "#F1ECE4", "#F6F3EE", "#FBFAF7", "#FFFFFF"];
+  const COLORS = ["#EAD8C6", "#F0E2D5", "#F5EBE2", "#F9F2EC", "#FCF8F4", "#FFFFFF"];
   const steps = $$(".r-step", ritual);
   const dots = $$("#ritualDots i");
   const petals = $$(".ritual-lotus .petal", ritual);
@@ -419,6 +418,7 @@ function initRitual() {
         draft[phraseKey] = opt.dataset.phrase;
         draft[labelKey] = opt.firstChild.textContent.trim();
         if (opt.dataset.focus) draft.enfoque = opt.dataset.focus;
+        if (opt.dataset.key) draft.clave = opt.dataset.key;
         const next = current + 1;
         if (next === 5) {
           finish();
@@ -470,7 +470,7 @@ function saludoBase() {
   const p = state.perfil;
   return p
     ? `Hola, ${p.nombre} 🌿 Soy el asistente digital de Mariana. ¿En qué te puedo acompañar?`
-    : "Hola 🌿 Soy el asistente digital de Mariana. Puedo contarte cómo acompaña, orientarte o ayudarte a agendar una consulta. ¿Qué te gustaría hacer posible?";
+    : "Hola 🌿 Soy el asistente digital de Mariana. Puedo contarte sobre LONÉVA, su membresía, las consultas 1:1 o su trabajo con Portal Health. ¿Qué te gustaría hacer posible?";
 }
 
 function addBubble(who, text, animate = true) {
@@ -490,47 +490,74 @@ function renderChat() {
   visibles.forEach((m) => addBubble(m.role === "user" ? "me" : "ai", m.content, false));
 }
 
+const PORTAL_HEALTH = "https://portalhealth.ai/login?ref=52C184EF";
+
+const CIERRE_POR_CLAVE = {
+  dietas:
+    "Mariana trabaja justo eso: sin dietas extremas ni culpa, con estructura del plato y porciones que puedas sostener. ¿Te comparto su Guía anti-dieta extrema gratis o prefieres conocer LONÉVA?",
+  porciones:
+    "Eso es lo que más le preguntan a Mariana: qué comer y en qué porciones. ¿Te comparto su Guía anti-dieta extrema gratis o prefieres una consulta 1:1 para un plan a tu medida?",
+  loneva:
+    "¡Felicidades por terminar LONÉVA! 🎉 Lo que sigue vive en la app de Mariana: su membresía, con las cápsulas completas de sueño, estrés y antojos, recetario de postres saludables y retos cada mes. ¿Te cuento cómo entrar?",
+  consulta:
+    "La consulta 1:1 es el mejor punto de partida para un plan a tu medida. ¿Te comparto el link para reservarla en la agenda de Mariana?",
+  peps: "Mariana trabaja con Portal Health: ella te explica su protocolo y la clínica hace tu valoración médica. ¿Te comparto los pasos para empezar?",
+};
+
 function respuestaLocal(texto) {
   const p = state.perfil;
   const nombre = p ? p.nombre : "";
   if (texto === "__inicio__" && p) {
-    return `Hola, ${p.nombre} 🌿 Soy el asistente digital de Mariana. Vi que ${p.intencion} y que en 30 días te gustaría ${p.sentir}. Mariana acompaña justo eso, desde la alimentación, el movimiento y los hábitos de tu vida real. ¿Te cuento cómo podría acompañarte o prefieres agendar una consulta?`;
+    const cierre = CIERRE_POR_CLAVE[p.clave] || CIERRE_POR_CLAVE.dietas;
+    return `Hola, ${p.nombre} 🌿 Soy el asistente digital de Mariana. Vi que ${p.intencion} y que en 30 días te gustaría ${p.sentir}. ${cierre}`;
   }
   const t = texto.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
   const reglas = [
     [
-      /sustanc|inyecc|dosis|medicament|suplement|tratamiento|enfermedad|diagnost|embaraz|sintoma|pastilla/,
-      "Ese tema prefiero que lo converses directamente con Mariana en una consulta personalizada: así recibes una orientación responsable y a tu medida. ¿Te ayudo a agendarla? 🌿",
+      /dosis|cuanto me (inyecto|aplico)|cual (peptido|me sirve)|diagnost|embaraz|lactan|enfermedad|medicament|sintoma|pastilla/,
+      "Eso lo debe valorar un profesional de salud: en el caso de los péptidos, el equipo médico de Portal Health, y en lo demás, una consulta 1:1 con Mariana. Yo no doy dosis ni diagnósticos. ¿Te ayudo con alguno de los dos caminos? 🌿",
+    ],
+    [
+      /pept|peps|portal health/,
+      `Mariana trabaja con Portal Health AI 🤍 Ella te enseña su protocolo y cómo los péptidos pueden potenciar tus hábitos; la valoración médica, la compra y el acompañamiento los hace la clínica. Puedes empezar tu valoración aquí: ${PORTAL_HEALTH}`,
+    ],
+    [
+      /termine|gradu|que sigue|despues de loneva|membresia/,
+      "¡Qué orgullo que llegaste hasta aquí! 🎉 Después de LONÉVA empieza lo tuyo en la app de Mariana: su membresía con cápsulas completas de sueño y recuperación, estrés y antojos, suplementación y piel, entrenamiento y ciclo menstrual, la guía de nutrición completa, recetario de postres saludables y retos cada mes. ¿Te aviso apenas abra tu acceso?",
     ],
     [
       /loneva|longevidad/,
-      "LONEVA es un programa integral de longevidad para mujeres que combina educación, hábitos, nutrición y movimiento. Está en desarrollo: si quieres, te dejo en la lista para avisarte primero. ✨",
+      "LONÉVA es el programa insignia de Mariana: 8 semanas, $299, creado con Déjà Vu y Luis Esteban Pérez Franco. Incluye 40 sesiones de entrenamiento con niveles y Plan B, nutrición básica (estructura del plato, proteína primero, porciones), audios de rescate para antojos, reto de 21 días sin azúcar y tu Índice LONÉVA al inicio y al final. ¿Te cuento cuándo arranca la próxima cohorte?",
+    ],
+    [
+      /guia|gratis|descarg/,
+      "¡Claro! La Guía anti-dieta extrema de Mariana es gratis 🌿 Déjame tu correo o tu WhatsApp y te la envío ahora mismo.",
     ],
     [
       /precio|cuanto|cuesta|costo|valor|pagar|pago/,
-      "Prefiero no darte un valor inventado 🙂 Mariana comparte precios y opciones según lo que necesitas. ¿Te ayudo a agendar una consulta o prefieres que te escriba por WhatsApp?",
+      "LONÉVA cuesta $299 por 8 semanas. Las consultas 1:1 y los planes personalizados tienen su propio valor según lo que necesites: te lo confirma Mariana al reservar. ¿Qué te interesa más?",
     ],
     [
-      /consulta|agend|cita|horario/,
-      "¡Con gusto! La consulta personalizada es el mejor punto de partida: Mariana entiende tu momento y te propone un primer paso a tu medida. ¿Coordinamos el horario por WhatsApp o por correo?",
+      /consulta|agend|cita|horario|1:1|reserv/,
+      "¡Con gusto! Puedes reservar tu consulta de nutrición 1:1 directo en la agenda de Mariana y elegir el horario que te quede mejor. ¿Te comparto el link?",
     ],
     [
-      /acompan|como trabaja|metodo|enfoque/,
-      "Mariana acompaña desde cuatro pilares: alimentación, movimiento, hábitos y vida real. Sin dietas extremas ni culpa: cambios pequeños que puedas sostener. ¿Qué te gustaría trabajar primero?",
-    ],
-    [
-      /empez|no se|perdid/,
-      "Es normal no saber por dónde empezar. Lo más sencillo es una consulta con Mariana: entiende tu momento y te propone el primer paso. ¿Te ayudo a agendarla?",
-    ],
-    [
-      /eres (una )?ia|robot|humano|persona real|hablar con mariana/,
+      /eres (una )?ia|robot|humano|persona real|hablar con (ella|mariana)/,
       "Soy el asistente digital de Mariana: funciono con inteligencia artificial y ella revisa cada caso. Si prefieres hablar directamente con ella, le aviso para que te escriba. 🤍",
+    ],
+    [
+      /quien es|mariana|credencial|enfermer|coach/,
+      "Mariana vive en Orlando, Florida. Tiene formación en enfermería, es coach de psicología de la nutrición y personal trainer, y trabaja en Déjà Vu. Su lema: la longevidad empieza en la mente. 🌿",
+    ],
+    [
+      /antojo|azucar|dulce|ansiedad/,
+      "Los antojos son el corazón del método de Mariana: no es fuerza de voluntad, es entender qué los dispara. En LONÉVA tienes audios de rescate para esos momentos y un reto de 21 días sin azúcar. ¿Quieres que te cuente más?",
     ],
     [/^(hola|buen|hey|que tal)/, `¡Hola${nombre ? ", " + nombre : ""}! 🌿 ¿En qué te puedo acompañar hoy?`],
     [/gracias/, "Con mucho gusto. Aquí estoy cuando quieras seguir. 🌿"],
   ];
   for (const [regla, respuesta] of reglas) if (regla.test(t)) return respuesta;
-  return `Gracias por contarme${nombre ? ", " + nombre : ""}. Para orientarte mejor: ¿qué te gustaría hacer posible primero, mejorar tu alimentación, moverte más o crear hábitos que se sostengan?`;
+  return `Gracias por contarme${nombre ? ", " + nombre : ""}. Para orientarte mejor: ¿te interesa LONÉVA, una consulta 1:1, la Guía anti-dieta extrema o conocer cómo trabaja Mariana con Portal Health?`;
 }
 
 async function pedirRespuesta() {
@@ -630,9 +657,11 @@ function actualizarLoto() {
   $("#lotoFocus").textContent = enfoque;
   $("#notif1").textContent =
     `Buenos días${p ? ", " + nombre : ""} ☀️ Tu enfoque de hoy: ${enfoque.replace(/\.$/, "").toLowerCase()}.`;
+  const base =
+    "La llamamos Loto. Se instala desde tu web, con login: su programa, su plan de nutrición, sus rutinas, su check-in diario de sueño, agua, ánimo y movimiento, sus insignias, la comunidad privada y el contenido que se desbloquea cada semana.";
   $("#lotoLead").textContent = p
-    ? "Loto se instala directo desde tu web: con tu ícono, a pantalla completa y con notificaciones según su objetivo. Mira: ya te saluda por tu nombre y con lo que elegiste en tu Primer Loto."
-    : "Loto se instala directo desde tu web: con tu ícono, a pantalla completa y con notificaciones según su objetivo. Abre tu Primer Loto y mira cómo la app te saluda con lo que respondiste.";
+    ? `${base} Mira: ya te saluda por tu nombre y con lo que elegiste en tu Primer Loto.`
+    : `${base} Abre tu Primer Loto y mira cómo te saluda con lo que respondiste.`;
 }
 
 function marcarLotoProbada() {
@@ -752,86 +781,86 @@ const CONTACTOS = [
   {
     id: "carolina",
     nombre: "Carolina Mejía",
-    origen: "Instagram",
+    origen: "Graduada de LONÉVA",
     cuando: "hace 12 min",
     flag: ["ia", "IA atendiendo"],
-    resumen: "Consulta de nutrición",
+    resumen: "Quiere seguir en tu membresía",
     datos: [
-      ["Le trae", "Una consulta de nutrición"],
-      ["Quiere sentir", "Más energía"],
+      ["Le trae", "Terminó LONÉVA · cohorte 3"],
+      ["Quiere sentir", "Menos antojos"],
       ["Prefiere", "WhatsApp"],
       ["Temperatura", "Alta"],
     ],
-    paso: "Confirmar el horario que pidió para el jueves.",
+    paso: "Invitarla a tu app y presentarle la membresía: su Índice LONÉVA subió de 44 a 78.",
     historia: [
-      ["Llegó desde un reel de Instagram", "Hoy · 9:12"],
-      ["Abrió su Primer Loto", "Hoy · 9:14"],
-      ["Pidió horarios de consulta", "Hoy · 9:20"],
+      ["Se graduó de LONÉVA en Déjà Vu", "Viernes"],
+      ["Recibió tu invitación automática a la app", "Sábado · 7:00"],
+      ["Preguntó por la membresía", "Hoy · 9:20"],
     ],
     chat: [
-      ["user", "¡Hola! Quiero una consulta, ¿hay espacio esta semana?"],
+      ["user", "¡Terminé LONÉVA! ¿Qué sigue ahora?"],
       [
         "assistant",
-        "¡Hola, Carolina! 🌿 Claro que sí. Mariana tiene espacios el jueves en la mañana y el viernes en la tarde. ¿Cuál te queda mejor?",
+        "¡Felicidades, Carolina! 🎉 Lo que sigue vive en la app de Mariana: su membresía, con las cápsulas completas de estrés y antojos, recetario de postres saludables y retos cada mes. ¿Te cuento cómo entrar?",
       ],
-      ["user", "El jueves en la mañana."],
+      ["user", "Sí, ¿y los antojos de la noche se trabajan ahí?"],
     ],
   },
   {
     id: "manuela",
     nombre: "Manuela Cardona",
-    origen: "Web",
+    origen: "Guía gratuita",
     cuando: "hace 25 min",
     flag: ["human", "Te necesita"],
     resumen: "Pidió hablar contigo",
     datos: [
-      ["Le trae", "Mejorar su alimentación"],
+      ["Le trae", "Saber qué comer y en qué porciones"],
       ["Quiere sentir", "Paz con la comida"],
       ["Prefiere", "WhatsApp"],
       ["Temperatura", "Alta"],
     ],
-    paso: "Escribirle personalmente: quiere hablar contigo antes de decidir.",
+    paso: "Escribirle personalmente y enviarle tu Calendly para una consulta 1:1.",
     historia: [
-      ["Llegó a tu web desde Google", "Hoy · 8:47"],
+      ["Descargó tu Guía anti-dieta extrema", "Hoy · 8:47"],
       ["Conversó con tu asistente", "Hoy · 8:50"],
       ["Pidió hablar con Mariana", "Hoy · 8:58"],
     ],
     chat: [
-      ["user", "Me encanta tu contenido. ¿Puedo hablar contigo directamente?"],
+      ["user", "Leí tu guía y me encantó. ¿Puedo hablar contigo directamente?"],
       [
         "assistant",
         "¡Gracias, Manuela! 🤍 Ya le avisé a Mariana y te escribirá personalmente. Mientras tanto, ¿me cuentas qué te gustaría trabajar?",
       ],
-      ["user", "Quiero organizar mis comidas sin sentir culpa."],
+      ["user", "Tengo rutina, pero no sé qué comer ni en qué porciones. Estoy cansada de las dietas."],
     ],
   },
   {
     id: "andrea",
     nombre: "Andrea Salazar",
-    origen: "Recomendación",
+    origen: "Sección PEPS",
     cuando: "ayer",
-    flag: ["ia", "Agendada"],
-    resumen: "LONEVA · consulta el jueves",
+    flag: ["ia", "Derivada"],
+    resumen: "Péptidos · derivada a Portal Health",
     datos: [
-      ["Le trae", "LONEVA"],
-      ["Quiere sentir", "Más fuerza"],
+      ["Le trae", "Conocer los péptidos con respaldo médico"],
+      ["Quiere sentir", "Recomponer su cuerpo"],
       ["Prefiere", "Correo"],
       ["Temperatura", "Alta"],
     ],
-    paso: "Revisar el resumen de la IA antes de la consulta del jueves.",
+    paso: "Darle seguimiento a su valoración en Portal Health e invitarla a LONÉVA.",
     historia: [
-      ["Llegó por recomendación de Juliana", "Ayer · 18:05"],
-      ["Preguntó por LONEVA", "Ayer · 18:07"],
-      ["Agendó consulta · jueves 10:00", "Ayer · 18:10"],
+      ["Vio tu serie de videos sobre tu protocolo", "Ayer · 18:05"],
+      ["Preguntó cómo funcionan los péptidos contigo", "Ayer · 18:07"],
+      ["Abrió tu link de Portal Health", "Ayer · 18:10"],
     ],
     chat: [
-      ["user", "Quiero conocer LONEVA."],
+      ["user", "¿Cómo funcionan los péptidos contigo?"],
       [
         "assistant",
-        "LONEVA es un programa integral de longevidad para mujeres que combina educación, hábitos, nutrición y movimiento. El mejor punto de partida es una consulta con Mariana. ¿Te la agendo?",
+        "Mariana trabaja con Portal Health AI 🤍 Ella te enseña su protocolo y cómo los péptidos pueden potenciar tus hábitos; la valoración médica y la compra las hace la clínica. ¿Te comparto el link para empezar tu valoración?",
       ],
-      ["user", "Sí, el jueves."],
-      ["assistant", "Listo, Andrea: jueves 10:00. Te enviaré un recordatorio un día antes ✨"],
+      ["user", "Sí, por favor."],
+      ["assistant", "Aquí lo tienes, Andrea. Cuando tengas tu valoración, Mariana te acompaña con los hábitos ✨"],
     ],
   },
 ];
@@ -842,7 +871,7 @@ function contactoTu() {
   const visibles = mensajesVisibles();
   const preguntas = visibles.filter((m) => m.role === "user").length;
   const historia = [
-    ["Descubrió tu contenido en Instagram", "Origen"],
+    ["Te encontró en Instagram (@mar.echeverri)", "Origen"],
     ["Abrió su Primer Loto", haceCuanto(p.en)],
     [`Eligió: ${p.intencionTexto}`, "Primer Loto"],
   ];
@@ -959,7 +988,7 @@ function actualizarRaiz() {
   // Hoy
   $("#newCount").textContent = String(todos.length);
   $("#kpiNew").textContent = String(todos.length);
-  $("#kpiNewNote").textContent = tu ? `${tu.nombre}, ${tu.cuando}` : "Desde Instagram y web";
+  $("#kpiNewNote").textContent = tu ? `${tu.nombre}, ${tu.cuando}` : "Desde Instagram y tu guía";
   $("#taskYou").hidden = !tu;
   if (tu) {
     $("#taskYouTitle").textContent = `Responder a ${tu.nombre}`;
@@ -1073,7 +1102,7 @@ function initRaiz() {
     const sizes = on.map((s) => Number(s.dataset.n));
     const largest = sizes.length ? Math.max(...sizes) : 0;
     const rest = sizes.reduce((sum, n) => sum + n, 0) - largest;
-    const reach = all ? 24 : Math.min(24, largest + Math.round(rest * 0.4));
+    const reach = all ? 31 : Math.min(31, largest + Math.round(rest * 0.4));
     const chosen = channels.filter((c) => c.checked).map((c) => c.value);
     const reachEl = $("#reach");
     if (!reach || !chosen.length) {
@@ -1086,10 +1115,10 @@ function initRaiz() {
     $("#sigPreview").textContent = msg.value.trim() || "Tu mensaje aparecerá aquí.";
     const now = whens.find((w) => w.classList.contains("is-on")).dataset.when === "now";
     const d = new Date();
+    // "Lunes 7:00" es el próximo lunes
+    if (!now) d.setDate(d.getDate() + ((8 - d.getDay()) % 7 || 7));
     $("#lockTime").textContent = now ? d.toLocaleTimeString("es", { hour: "numeric", minute: "2-digit" }) : "7:00";
-    $("#lockDate").textContent = now
-      ? d.toLocaleDateString("es", { weekday: "long", day: "numeric", month: "long" })
-      : "lunes, 27 de octubre";
+    $("#lockDate").textContent = d.toLocaleDateString("es", { weekday: "long", day: "numeric", month: "long" });
     return { reach, chosen, now };
   };
 
@@ -1134,7 +1163,7 @@ function initRaiz() {
 /* ---------- Acto III · calculadora ---------- */
 
 function initCalc() {
-  const inputs = { msgs: $("#cMsgs"), miss: $("#cMiss"), conv: $("#cConv"), value: $("#cValue") };
+  const inputs = { grads: $("#cGrads"), conv: $("#cConv"), price: $("#cPrice"), months: $("#cMonths") };
   let trackTimer;
 
   const update = (registrar) => {
@@ -1142,37 +1171,37 @@ function initCalc() {
       const pct = ((input.value - input.min) / (input.max - input.min)) * 100;
       input.style.setProperty("--fill", `${pct}%`);
     });
-    const msgs = Number(inputs.msgs.value);
-    const miss = Number(inputs.miss.value);
+    const grads = Number(inputs.grads.value);
     const conv = Number(inputs.conv.value);
-    const value = Number(inputs.value.value);
+    const price = Number(inputs.price.value);
+    const months = Number(inputs.months.value);
 
-    $("#oMsgs").textContent = msgs;
-    $("#oMiss").textContent = `${miss}%`;
-    $("#oConv").textContent = `${conv} de 10`;
-    $("#oValue").textContent = money(value);
+    $("#oGrads").textContent = grads;
+    $("#oConv").textContent = `${conv}%`;
+    $("#oPrice").textContent = money(price);
+    $("#oMonths").textContent = months;
 
-    const sinRespuesta = msgs * 4.3 * (miss / 100);
-    const perdido = Math.round(sinRespuesta * (conv / 10) * value);
-    $("#rLost").textContent = money(perdido);
-    $("#rLost2").textContent = money(perdido);
-    $("#rPeople").textContent =
-      `≈ ${Math.round(sinRespuesta)} personas al mes escriben y no reciben respuesta a tiempo.`;
+    // Cada cohorte suma miembros nuevos; su valor es lo que pagan durante los meses que se quedan
+    const miembros = Math.round(grads * (conv / 100));
+    const mrr = miembros * price;
+    const cohorte = mrr * months;
+    $("#rMrr").textContent = money(mrr);
+    $("#rMembers").textContent =
+      `${miembros} ${miembros === 1 ? "clienta nueva" : "clientas nuevas"} en tu membresía cada mes, solo con tus graduadas de LONÉVA.`;
+    $("#rCohort").textContent = money(cohorte);
 
-    const max = Math.max(perdido, CONFIG.monthly);
-    $("#barLost").style.width = `${(perdido / max) * 100}%`;
+    const max = Math.max(mrr, CONFIG.monthly);
+    $("#barMrr").style.width = `${(mrr / max) * 100}%`;
     $("#barCost").style.width = `${(CONFIG.monthly / max) * 100}%`;
 
-    const necesarios = Math.ceil(CONFIG.monthly / value);
+    const necesarias = Math.ceil(CONFIG.monthly / price);
     $("#rPayback").textContent =
-      perdido === 0
-        ? "Si hoy respondes todo a tiempo, el sistema te devuelve horas: tu asistente atiende lo repetitivo por ti."
-        : `Con recuperar ${necesarios} ${necesarios === 1 ? "cliente" : "clientes"} al mes, la mensualidad se paga sola.`;
+      `Con ${necesarias} ${necesarias === 1 ? "clienta activa" : "clientas activas"} en tu membresía, la mensualidad se paga sola.`;
 
     if (registrar) {
       clearTimeout(trackTimer);
       trackTimer = setTimeout(
-        () => track("calculadora", { mensajes: msgs, sin_respuesta: miss, compran: conv, valor: value, perdido }),
+        () => track("calculadora", { graduadas: grads, conversion: conv, precio: price, meses: months, mrr, cohorte }),
         2500,
       );
     }
@@ -1235,7 +1264,7 @@ function initApproval() {
   const whatsappLink = (name) => {
     const plan = PLANS[aprobacion.plan];
     const text =
-      `Hola, soy ${name}. Apruebo la propuesta del Ecosistema Digital Mariana Echeverri ` +
+      `Hola, soy ${name}. Apruebo la propuesta del Ecosistema Digital Mariana Echeverri · Nutrición & Longevidad ` +
       `con la modalidad "${plan.label}" (${money(plan.today)} USD para iniciar). ` +
       `Quedo pendiente de los datos de pago y del arranque.`;
     return `https://wa.me/${CONFIG.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent(text)}`;

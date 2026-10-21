@@ -1,17 +1,30 @@
 {
-  "name": "Propuesta · Mariana Echeverri Wellness & Nutrition",
+  "name": "Propuesta · Mariana Echeverri Nutrición & Longevidad",
   "short_name": "Mariana",
-  "description": "Propuesta del Ecosistema Digital: web de experiencia, app Mi bienestar, Mariana Studio y automatizaciones con IA.",
+  "description": "Propuesta del Ecosistema Digital: web de experiencia, app Loto, panel Raíz y automatizaciones con IA.",
   "lang": "es",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#1B2720",
-  "theme_color": "#1B2720",
+  "background_color": "#FAF0E6",
+  "theme_color": "#FAF0E6",
   "icons": [
-    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
-    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ]
 }
