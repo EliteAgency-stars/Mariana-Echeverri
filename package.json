@@ -1,0 +1,12 @@
+{
+  "name": "mariana-echeverri-propuesta",
+  "private": true,
+  "type": "module",
+  "description": "Propuesta Ecosistema Digital Mariana Echeverri · Wellness & Nutrition",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.137.0"
+  }
+}

@@ -1,5 +1,5 @@
 /* Service worker: la propuesta funciona como app instalable y sin conexión. */
-const CACHE = "me-propuesta-v1";
+const CACHE = "me-propuesta-v2";
 const CORE = [
   "./",
   "index.html",
