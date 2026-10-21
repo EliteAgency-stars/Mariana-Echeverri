@@ -10,8 +10,8 @@ const CONFIG = {
   whatsapp: "",
   // Último día de vigencia (AAAA-MM-DD)
   validUntil: "2026-10-28",
-  total: 2150,
-  deposit: 1075,
+  total: 2500,
+  deposit: 1250,
   monthly: 150,
 };
 

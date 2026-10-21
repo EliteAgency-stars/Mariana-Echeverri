@@ -17,7 +17,7 @@ Sitio estático: no necesita build. Se publica tal cual en Vercel, Netlify o Git
   módulos, titular) y Señales de marketing con vista previa en la pantalla de bloqueo.
 - **App instalable (PWA)**: guía de instalación para iPhone, Android y computador, botón para instalar la propuesta y
   notificación de prueba.
-- **Inversión** desglosada ($2,150), **formas de pago** (contado: entrega en 4 h · abono 50%: inicio en 8 h, entrega
+- **Inversión** desglosada ($2,500), **formas de pago** (contado: entrega en 4 h · abono 50%: inicio en 8 h, entrega
   en 2 días) y **continuidad** ($150/mes).
 - **Aprobación** en dos pasos que termina con un mensaje listo para WhatsApp. Botón para descargar en PDF.
 
