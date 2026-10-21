@@ -1,0 +1,17 @@
+{
+  "name": "Propuesta · Mariana Echeverri Wellness & Nutrition",
+  "short_name": "Mariana",
+  "description": "Propuesta del Ecosistema Digital: web de experiencia, app Mi bienestar, Mariana Studio y automatizaciones con IA.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FBFAF6",
+  "theme_color": "#E7DFD2",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
